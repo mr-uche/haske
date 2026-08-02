@@ -1,0 +1,33 @@
+export const diseaseOptions = [
+    "Cholera",
+    "Lassa Fever",
+    "Malaria",
+    "Meningitis",
+    "Typhoid",
+    "Measles",
+    "Yellow Fever",
+  ];
+  
+  export const lgaOptions = [
+    "Yola North",
+    "Yola South",
+    "Mubi North",
+    "Mubi South",
+    "Hong",
+    "Gombi",
+    "Michika",
+    "Madagali",
+    "Demsa",
+    "Girei",
+    "Fufore",
+    "Guyuk",
+    "Song",
+    "Lamurde",
+    "Numan",
+    "Shelleng",
+    "Jada",
+    "Ganye",
+    "Toungo",
+    "Mayo-Belwa",
+    "Maiha",
+  ];
