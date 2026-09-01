@@ -7,35 +7,35 @@ export default function FraudFlagsTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-5">
+        <div className="rounded-2xl border border-orange-500/20 bg-orange-500 p-5">
           <div className="flex items-center justify-between">
-            <ShieldAlert size={20} className="text-orange-400" />
-            <TrendingDown size={16} className="text-brand-400" />
+            <ShieldAlert size={20} className="text-orange-700" />
+            <TrendingDown size={16} className="text-green-400" />
           </div>
           <p className="mt-3 text-3xl font-bold text-white">{fraudSummary.flaggedClaims}</p>
-          <p className="text-xs text-slate-400">Flagged Claims</p>
+          <p className="text-xs text-white">Flagged Claims</p>
         </div>
-        <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-5">
+        <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
           <div className="flex items-center justify-between">
             <ShieldAlert size={20} className="text-red-400" />
-            <TrendingDown size={16} className="text-brand-400" />
+            <TrendingDown size={16} className="text-green-400" />
           </div>
           <p className="mt-3 text-3xl font-bold text-white">{fraudSummary.fraudRate}</p>
-          <p className="text-xs text-slate-400">Fraud Rate</p>
+          <p className="text-xs text-white">Fraud Rate</p>
         </div>
-        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-5">
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
           <div className="flex items-center justify-between">
-            <ShieldAlert size={20} className="text-amber-400" />
-            <TrendingDown size={16} className="text-brand-400" />
+            <ShieldAlert size={20} className="text-amber-700" />
+            <TrendingDown size={16} className="text-green-400" />
           </div>
           <p className="mt-3 text-3xl font-bold text-white">{fraudSummary.amountAtRisk}</p>
-          <p className="text-xs text-slate-400">Amount at Risk</p>
+          <p className="text-xs text-white">Amount at Risk</p>
         </div>
       </div>
 
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <h3 className="text-sm font-semibold text-white">Flagged Claims — Review Required</h3>
-        <p className="text-xs text-slate-500">AI-detected anomalies requiring manual review</p>
+        <p className="text-xs text-white">AI-detected anomalies requiring manual review</p>
 
         <div className="mt-4 space-y-3">
           {flaggedClaims.map((c, i) => (
@@ -54,7 +54,7 @@ export default function FraudFlagsTab() {
                       <span className="font-mono text-xs text-brand-400">{c.aschmaId}</span>{" "}
                       <span className="font-semibold text-white">{c.amount}</span>
                     </p>
-                    <p className="mt-0.5 text-xs text-slate-500">
+                    <p className="mt-0.5 text-xs text-white">
                       {c.diagnosis} · {c.icdCode}
                     </p>
                   </div>

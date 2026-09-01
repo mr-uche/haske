@@ -105,28 +105,28 @@ export default function DiseaseCases() {
         <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
           <div className="flex items-center justify-between">
             <AlertTriangle className="text-red-400" size={18} />
-            <span className="text-3xl font-bold text-black">{confirmedCount}</span>
+            <span className="text-3xl font-bold text-white">{confirmedCount}</span>
           </div>
-          <p className="mt-3 text-sm font-semibold text-black">Confirmed</p>
-          <p className="text-xs text-slate-500">Total reported cases</p>
+          <p className="mt-3 text-sm font-semibold text-white">Confirmed</p>
+          <p className="text-xs text-white">Total reported cases</p>
         </div>
 
         <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
           <div className="flex items-center justify-between">
-            <FlaskConical className="text-amber-400" size={18} />
-            <span className="text-3xl font-bold text-black">{suspectedCount}</span>
+            <FlaskConical className="text-amber-900" size={18} />
+            <span className="text-3xl font-bold text-white">{suspectedCount}</span>
           </div>
-          <p className="mt-3 text-sm font-semibold text-black">Suspected</p>
-          <p className="text-xs text-slate-500">Total reported cases</p>
+          <p className="mt-3 text-sm font-semibold text-white">Suspected</p>
+          <p className="text-xs text-white">Total reported cases</p>
         </div>
 
         <div className="rounded-2xl border border-emerald-500/20 bg-emerald-600 p-5">
           <div className="flex items-center justify-between">
             <CheckCircle2 className="text-emerald-400" size={18} />
-            <span className="text-3xl font-bold text-black">{ruledOutCount}</span>
+            <span className="text-3xl font-bold text-white">{ruledOutCount}</span>
           </div>
-          <p className="mt-3 text-sm font-semibold text-black">Ruled Out</p>
-          <p className="text-xs text-slate-500">Total reported cases</p>
+          <p className="mt-3 text-sm font-semibold text-white">Ruled Out</p>
+          <p className="text-xs text-white">Total reported cases</p>
         </div>
       </div>
 
@@ -134,15 +134,15 @@ export default function DiseaseCases() {
       <div className="rounded-2xl border border-surface-border bg-green-950 p-4">
         <div className="flex items-center gap-3">
           <div className="flex flex-1 items-center gap-2 rounded-xl border border-surface-border bg-white/5 px-3 py-2">
-            <Search size={16} className="text-slate-500" />
+            <Search size={16} className="text-white" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search cases, LGAs, CHEWs..."
-              className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+              className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
             />
           </div>
-          <button className="flex items-center gap-2 rounded-xl border border-surface-border px-3 py-2 text-xs font-medium text-slate-400 hover:text-slate-200">
+          <button className="flex items-center gap-2 rounded-xl border border-surface-border px-3 py-2 text-xs font-medium text-white hover:text-slate-200">
             <SlidersHorizontal size={14} />
           </button>
         </div>
@@ -154,7 +154,7 @@ export default function DiseaseCases() {
               onClick={() => setDiseaseFilter(f)}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                 diseaseFilter === f
-                  ? "bg-brand-500/20 text-brand-400"
+                  ? "bg-green-700 text-white"
                   : "bg-white/5 text-slate-400 hover:text-slate-200"
               }`}
             >
@@ -168,7 +168,7 @@ export default function DiseaseCases() {
               onClick={() => setStatusFilter(f)}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                 statusFilter === f
-                  ? "bg-brand-500/20 text-brand-400"
+                  ? "bg-green-700 text-white"
                   : "bg-white/5 text-slate-400 hover:text-slate-200"
               }`}
             >
@@ -182,7 +182,7 @@ export default function DiseaseCases() {
       <div className="overflow-hidden rounded-2xl border border-surface-border bg-green-950">
         <table className="w-full text-left">
           <thead>
-            <tr className="border-b border-surface-border text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-xs uppercase tracking-wide text-white">
               <th className="px-5 py-3 font-medium">Disease</th>
               <th className="px-5 py-3 font-medium">Location</th>
               <th className="px-5 py-3 font-medium">Symptoms</th>
@@ -206,20 +206,20 @@ export default function DiseaseCases() {
                       <span className="text-sm font-semibold text-white">{c.disease}</span>
                     </div>
                   </td>
-                  <td className="px-5 py-4 text-sm text-slate-400">{c.location}</td>
+                  <td className="px-5 py-4 text-sm text-white">{c.location}</td>
                   <td className="px-5 py-4">
                     <div className="flex flex-wrap gap-1.5">
                       {c.symptoms.map((s) => (
                         <span
                           key={s}
-                          className="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-300"
+                          className="rounded-md bg-white/5 px-2 py-1 text-xs text-white"
                         >
                           {s}
                         </span>
                       ))}
                     </div>
                   </td>
-                  <td className="px-5 py-4 text-sm text-slate-400">{c.reportedBy}</td>
+                  <td className="px-5 py-4 text-sm text-white">{c.reportedBy}</td>
                   <td className="px-5 py-4">
                     <span
                       className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${statusStyles[c.status]}`}
@@ -228,8 +228,8 @@ export default function DiseaseCases() {
                       {c.status}
                     </span>
                   </td>
-                  <td className="px-5 py-4 text-xs text-slate-500 whitespace-nowrap">{c.time}</td>
-                  <td className="px-5 py-4 text-slate-600">
+                  <td className="px-5 py-4 text-xs text-white whitespace-nowrap">{c.time}</td>
+                  <td className="px-5 py-4 text-white">
                     <ChevronRight size={16} />
                   </td>
                 </tr>

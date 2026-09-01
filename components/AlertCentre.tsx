@@ -53,35 +53,35 @@ export default function AlertCentre() {
         <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
           <div className="flex items-center justify-between">
             <AlertTriangle className="text-red-400" size={18} />
-            <span className="text-3xl font-bold text-black">{criticalCount}</span>
+            <span className="text-3xl font-bold text-white">{criticalCount}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">Critical Alerts</p>
-          <p className="text-xs text-slate-500">Unacknowledged</p>
+          <p className="text-xs text-white">Unacknowledged</p>
         </div>
 
         <div className="rounded-2xl border border-orange-500/20 bg-orange-700 p-5">
           <div className="flex items-center justify-between">
             <AlertTriangle className="text-orange-400" size={18} />
-            <span className="text-3xl font-bold text-black">{highCount}</span>
+            <span className="text-3xl font-bold text-white">{highCount}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">High Alerts</p>
-          <p className="text-xs text-slate-500">Unacknowledged</p>
+          <p className="text-xs text-white">Unacknowledged</p>
         </div>
 
         <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
           <div className="flex items-center justify-between">
-            <AlertTriangle className="text-amber-400" size={18} />
-            <span className="text-3xl font-bold text-black">{moderateCount}</span>
+            <AlertTriangle className="text-amber-900" size={18} />
+            <span className="text-3xl font-bold text-white">{moderateCount}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">Moderate Alerts</p>
-          <p className="text-xs text-slate-500">Unacknowledged</p>
+          <p className="text-xs text-white">Unacknowledged</p>
         </div>
       </div>
 
       {/* Filteration bar */}
       <div className="flex items-center justify-between rounded-2xl border border-surface-border bg-green-950 p-4">
         <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1.5 text-xs font-medium text-slate-500">
+          <span className="flex items-center gap-1.5 text-xs font-medium text-white">
             <Filter size={14} /> Filter:
           </span>
           {severityFilters.map((f) => (
@@ -90,7 +90,7 @@ export default function AlertCentre() {
               onClick={() => setSeverityFilter(f)}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                 severityFilter === f
-                  ? "bg-brand-500/20 text-brand-400"
+                  ? "bg-green-600 text-white"
                   : "bg-white/5 text-slate-400 hover:text-slate-200"
               }`}
             >
@@ -100,7 +100,7 @@ export default function AlertCentre() {
         </div>
         <button
           onClick={() => setHideAcknowledged((v) => !v)}
-          className="flex items-center gap-2 rounded-xl border border-surface-border px-3 py-2 text-xs font-medium text-slate-400 hover:text-slate-200"
+          className="flex items-center gap-2 rounded-xl border border-surface-border px-3 py-2 text-xs font-medium text-white hover:text-slate-200"
         >
           <Bell size={14} />
           {hideAcknowledged ? "Show acknowledged" : "Hide acknowledged"}
@@ -111,7 +111,7 @@ export default function AlertCentre() {
       <div className="overflow-hidden rounded-2xl border border-surface-border bg-green-950">
         <table className="w-full text-left">
           <thead>
-            <tr className="border-b border-surface-border text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-xs uppercase tracking-wide text-white">
               <th className="px-5 py-3 font-medium">Severity</th>
               <th className="px-5 py-3 font-medium">Disease</th>
               <th className="px-5 py-3 font-medium">Location</th>
@@ -137,14 +137,14 @@ export default function AlertCentre() {
                 </td>
                 <td className="px-5 py-4 text-sm font-semibold text-white">{a.disease}</td>
                 <td className="px-5 py-4">
-                  <span className="flex items-center gap-1 text-sm text-slate-400">
+                  <span className="flex items-center gap-1 text-sm text-white">
                     <MapPin size={12} /> {a.location}
                   </span>
                 </td>
                 <td className="px-5 py-4 text-sm font-semibold text-white">{a.cases}</td>
-                <td className="px-5 py-4 text-sm text-slate-500">{a.threshold}</td>
+                <td className="px-5 py-4 text-sm text-white">{a.threshold}</td>
                 <td className="px-5 py-4">
-                  <span className="flex items-center gap-1 text-xs text-slate-500">
+                  <span className="flex items-center gap-1 text-xs text-white">
                     <Clock size={11} /> {a.reported}
                   </span>
                 </td>
@@ -160,9 +160,9 @@ export default function AlertCentre() {
                   )}
                 </td>
                 <td className="px-5 py-4">
-                  <div className="flex items-center gap-3 text-slate-500">
+                  <div className="flex items-center gap-3 text-white">
                     {a.status === "Unacknowledged" && (
-                      <button className="hover:text-brand-400">
+                      <button className="hover:text-green-700">
                         <CheckCircle2 size={16} />
                       </button>
                     )}

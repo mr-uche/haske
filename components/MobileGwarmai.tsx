@@ -20,7 +20,7 @@ export default function MobileGwarmai() {
           </span>
           <div>
             <p className="text-base font-bold text-white">Gwarmai</p>
-            <p className="text-xs text-slate-400">AI Clinical Decision Support</p>
+            <p className="text-xs text-white">AI Clinical Decision Support</p>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export default function MobileGwarmai() {
         </p>
         <button
           onClick={() => router.push("/mobile/alerts")}
-          className="text-xs font-semibold text-green-950"
+          className="text-xs font-semibold text-black"
         >
           See all
         </button>

@@ -11,16 +11,16 @@ export default function PaymentReconciliationTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-500/10 p-5">
-          <p className="text-3xl font-bold text-brand-400">{paymentSummary.totalSubmitted}</p>
+        <div className="rounded-2xl border border-brand-500/20 bg-brand-500 p-5">
+          <p className="text-3xl font-bold text-white">{paymentSummary.totalSubmitted}</p>
           <p className="mt-2 text-sm font-semibold text-white">Total Submitted</p>
         </div>
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-500/10 p-5">
-          <p className="text-3xl font-bold text-brand-400">{paymentSummary.totalApproved}</p>
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
+          <p className="text-3xl font-bold text-white">{paymentSummary.totalApproved}</p>
           <p className="mt-2 text-sm font-semibold text-white">Total Approved</p>
         </div>
-        <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-5">
-          <p className="text-3xl font-bold text-red-400">{paymentSummary.rejectionRate}</p>
+        <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
+          <p className="text-3xl font-bold text-white">{paymentSummary.rejectionRate}</p>
           <p className="mt-2 text-sm font-semibold text-white">Rejection Rate</p>
         </div>
       </div>

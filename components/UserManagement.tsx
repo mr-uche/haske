@@ -33,32 +33,32 @@ export default function UserManagement() {
     <>
       {/* Stat cards */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
-        <div className="rounded-2xl border border-surface-border bg-green-50 p-5">
+        <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
           <p className="text-3xl font-bold text-white">{total}</p>
-          <p className="mt-1 text-sm text-slate-400">Total Users</p>
+          <p className="mt-1 text-sm text-white">Total Users</p>
         </div>
         <div className="rounded-2xl border border-brand-500/20 bg-brand-700 p-5">
           <p className="text-3xl font-bold text-white">{active}</p>
-          <p className="mt-1 text-sm text-slate-300">Active</p>
+          <p className="mt-1 text-sm text-white">Active</p>
         </div>
         <div className="rounded-2xl border border-surface-border bg-surface-card p-5">
           <p className="text-3xl font-bold text-white">{inactive}</p>
-          <p className="mt-1 text-sm text-slate-400">Inactive</p>
+          <p className="mt-1 text-sm text-white">Inactive</p>
         </div>
         <div className="rounded-2xl border border-red-500/20 bg-red-600 p-5">
-          <p className="text-3xl font-bold text-red-400">{locked}</p>
-          <p className="mt-1 text-sm text-slate-300">Locked</p>
+          <p className="text-3xl font-bold text-white">{locked}</p>
+          <p className="mt-1 text-sm text-white">Locked</p>
         </div>
       </div>
                            
       {/* Search + filters + add user */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-2.5">
-          <Search size={16} className="text-slate-500" />
+          <Search size={16} className="text-white" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
             placeholder="Search users..."
           />
         </div>
@@ -92,7 +92,7 @@ export default function UserManagement() {
           </select>
         </div>
 
-        <button className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2.5 text-sm font-semibold text-surface hover:bg-brand-400">
+        <button className="flex items-center gap-2 rounded-xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-green-900">
           <UserPlus size={16} />
           Add User
         </button>
@@ -102,7 +102,7 @@ export default function UserManagement() {
       <div className="rounded-2xl border border-surface-border bg-green-950">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-5 py-3 font-medium">User</th>
               <th className="px-5 py-3 font-medium">Role</th>
               <th className="px-5 py-3 font-medium">Facility / LGA</th>
@@ -116,12 +116,12 @@ export default function UserManagement() {
               <tr key={u.id} className="border-b border-surface-border/50 last:border-0">
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-slate-200">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-white">
                       {u.initials}
                     </span>
                     <div>
                       <p className="font-semibold text-white">{u.name}</p>
-                      <p className="text-xs text-slate-500">ID: {u.id}</p>
+                      <p className="text-xs text-white">ID: {u.id}</p>
                     </div>
                   </div>
                 </td>
@@ -133,8 +133,8 @@ export default function UserManagement() {
                 <td className="px-5 py-4">
                   {u.facility ? (
                     <>
-                      <p className="text-slate-300">{u.facility}</p>
-                      <p className="text-xs text-slate-500">{u.lga}</p>
+                      <p className="text-white">{u.facility}</p>
+                      <p className="text-xs text-white">{u.lga}</p>
                     </>
                   ) : (
                     <>
@@ -143,7 +143,7 @@ export default function UserManagement() {
                     </>
                   )}
                 </td>
-                <td className="px-5 py-4 text-slate-400">{u.lastActive}</td>
+                <td className="px-5 py-4 text-white">{u.lastActive}</td>
                 <td className="px-5 py-4">
                   <StatusBadge status={u.status} />
                 </td>

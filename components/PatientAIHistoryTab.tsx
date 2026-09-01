@@ -28,7 +28,7 @@ export default function PatientAIHistoryTab() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-white placeholder:text-white focus:outline-none"
             placeholder="Search patient by name or ASCHMA ID..."
           />
         </div>
@@ -60,20 +60,20 @@ export default function PatientAIHistoryTab() {
               <div className="flex gap-3">
                 <div className="rounded-xl border border-surface-border bg-white/[0.02] px-4 py-2.5 text-center">
                   <p className="text-lg font-bold text-white">{patientProfile.totalSessions}</p>
-                  <p className="text-[11px] text-slate-500">Total Sessions</p>
+                  <p className="text-[11px] text-white">Total Sessions</p>
                 </div>
                 <div className="rounded-xl border border-surface-border bg-white/[0.02] px-4 py-2.5 text-center">
                   <p className="text-lg font-bold text-brand-400">{patientProfile.aiAccepted}</p>
-                  <p className="text-[11px] text-slate-500">AI Accepted</p>
+                  <p className="text-[11px] text-brand-400">AI Accepted</p>
                 </div>
                 <div className="rounded-xl border border-surface-border bg-white/[0.02] px-4 py-2.5 text-center">
                   <p className="text-lg font-bold text-orange-400">{patientProfile.overridden}</p>
-                  <p className="text-[11px] text-slate-500">Overridden</p>
+                  <p className="text-[11px] text-orange-400">Overridden</p>
                 </div>
               </div>
             </div>
 
-            <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-white">
               Diagnosis Confidence Trend
             </p>
             <div className="mt-2 h-56 w-full">
@@ -81,15 +81,15 @@ export default function PatientAIHistoryTab() {
                 <LineChart data={confidenceTrend} margin={{ left: -20, right: 20 }}>
                   <XAxis
                     dataKey="date"
-                    stroke="#64748b"
-                    tick={{ fontSize: 11, fill: "#64748b" }}
+                    stroke="#ffffff"
+                    tick={{ fontSize: 11, fill: "#ffffff" }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <YAxis
                     domain={[70, 100]}
-                    stroke="#64748b"
-                    tick={{ fontSize: 11, fill: "#64748b" }}
+                    stroke="#ffffff"
+                    tick={{ fontSize: 11, fill: "#ffffff" }}
                     axisLine={false}
                     tickLine={false}
                   />
@@ -143,7 +143,7 @@ export default function PatientAIHistoryTab() {
                           </span>
                         ))}
                       </div>
-                      <p className="mt-0.5 text-xs text-slate-500">
+                      <p className="mt-0.5 text-xs text-white">
                         {c.chew} · {c.date}
                       </p>
                     </div>
@@ -152,9 +152,9 @@ export default function PatientAIHistoryTab() {
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-sm font-semibold text-brand-400">{c.confidence}%</p>
-                      <p className="text-[11px] text-slate-500">confidence</p>
+                      <p className="text-[11px] text-white">confidence</p>
                     </div>
-                    <ChevronRight size={16} className="text-slate-600" />
+                    <ChevronRight size={16} className="text-white" />
                   </div>
                 </button>
               ))}

@@ -28,10 +28,14 @@ export default function DiseaseOutbreakTrend() {
           <h3 className="text-sm font-semibold text-white">
             Disease Outbreak Trend
           </h3>
-          <p className="text-xs text-slate-500">Active cases by disease type</p>
+          <p className="text-xs text-white">
+            Active cases by disease type
+          </p>
         </div>
+
         <span className="flex items-center gap-1 text-xs font-semibold text-red-400">
-          <TrendingUp size={12} /> Escalating — 3 diseases
+          <TrendingUp size={12} />
+          Escalating — 3 diseases
         </span>
       </div>
 
@@ -40,26 +44,38 @@ export default function DiseaseOutbreakTrend() {
           <LineChart data={data} margin={{ left: -20, right: 10 }}>
             <XAxis
               dataKey="month"
-              stroke="#64748b"
-              tick={{ fontSize: 11, fill: "#64748b" }}
+              stroke="#ffffff"
+              tick={{
+                fill: "#ffffff",
+                fontSize: 11,
+              }}
               axisLine={false}
               tickLine={false}
             />
+
             <YAxis
-              stroke="#64748b"
-              tick={{ fontSize: 11, fill: "#64748b" }}
+              stroke="#ffffff"
+              tick={{
+                fill: "#ffffff",
+                fontSize: 11,
+              }}
               axisLine={false}
               tickLine={false}
             />
+
             <Tooltip
               contentStyle={{
                 background: "#101828",
                 border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: 8,
                 fontSize: 12,
+                color: "#ffffff",
               }}
-              labelStyle={{ color: "#e2e8f0" }}
+              labelStyle={{
+                color: "#ffffff",
+              }}
             />
+
             <Line
               type="monotone"
               dataKey="cholera"
@@ -67,6 +83,7 @@ export default function DiseaseOutbreakTrend() {
               strokeWidth={2}
               dot={false}
             />
+
             <Line
               type="monotone"
               dataKey="lassa"
@@ -74,6 +91,7 @@ export default function DiseaseOutbreakTrend() {
               strokeWidth={2}
               dot={false}
             />
+
             <Line
               type="monotone"
               dataKey="malaria"

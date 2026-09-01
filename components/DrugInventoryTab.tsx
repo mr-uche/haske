@@ -11,11 +11,11 @@ export default function DrugInventoryTab() {
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-sm font-semibold text-white">Drug & Supply Inventory</h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-white">
             {needsRestock} item{needsRestock === 1 ? "" : "s"} need restocking
           </p>
         </div>
-        <button className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-surface hover:bg-brand-400">
+        <button className="flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-900">
           <PackagePlus size={15} />
           Request Restock
         </button>
@@ -24,7 +24,7 @@ export default function DrugInventoryTab() {
       <div className="mt-5 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-3 py-3 font-medium">Drug / Supply</th>
               <th className="px-3 py-3 font-medium">Category</th>
               <th className="px-3 py-3 font-medium">Stock Level</th>
@@ -40,7 +40,7 @@ export default function DrugInventoryTab() {
                 <tr key={d.name} className="border-b border-surface-border/50 last:border-0">
                   <td className="px-3 py-4">
                     <p className="font-semibold text-white">{d.name}</p>
-                    <p className="text-xs text-slate-500">{d.minLabel}</p>
+                    <p className="text-xs text-white">{d.minLabel}</p>
                   </td>
                   <td className="px-3 py-4">
                     <span className="rounded-md bg-blue-500/10 px-2.5 py-1 text-xs font-semibold text-blue-300">

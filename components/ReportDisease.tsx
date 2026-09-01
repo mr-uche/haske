@@ -81,8 +81,8 @@ export default function ReportDisease() {
             onClick={() => setCaseType("suspected")}
             className={`rounded-xl border py-3 text-sm font-semibold transition ${
               caseType === "suspected"
-                ? "border-green-500 bg-green-950 text-black"
-                : "border-surface-border bg-green-700 text-slate-400"
+                ? "border-green-500 bg-green-950 text-white"
+                : "border-slate-700 bg-green-500 text-white"
             }`}
           >
             Suspected
@@ -91,8 +91,8 @@ export default function ReportDisease() {
             onClick={() => setCaseType("confirmed")}
             className={`rounded-xl border py-3 text-sm font-semibold transition ${
               caseType === "confirmed"
-                ? "border-green-700 bg-red-900 text-black"
-                : "border-green-700 bg-red-200 text-black"
+                ? "border-green-700 bg-green-950 text-white"
+                : "border-green-700 bg-green-500 text-white"
             }`}
           >
             Confirmed
@@ -110,7 +110,7 @@ export default function ReportDisease() {
           value={cases}
           onChange={(e) => setCases(e.target.value)}
           placeholder="e.g. 3"
-          className="mt-2 w-full rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+          className="mt-2 w-full rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-white focus:outline-none"
         />
       </div>
 
@@ -142,7 +142,7 @@ export default function ReportDisease() {
           value={facility}
           onChange={(e) => setFacility(e.target.value)}
           placeholder="e.g. Ngurore PHC"
-          className="mt-2 w-full rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+          className="mt-2 w-full rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-white focus:outline-none"
         />
       </div>
 
@@ -168,14 +168,14 @@ export default function ReportDisease() {
           onChange={(e) => setNotes(e.target.value)}
           rows={3}
           placeholder="Describe the situation, exposure source, contact tracing details..."
-          className="mt-2 w-full resize-none rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+          className="mt-2 w-full resize-none rounded-xl border border-surface-border bg-green-950 px-4 py-3 text-sm text-slate-200 placeholder:text-white focus:outline-none"
         />
       </div>
 
       <button
         onClick={handleContinue}
         disabled={!isValid}
-        className="mt-6 flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-950 py-3.5 text-sm font-bold text-black hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-6 flex w-full items-center justify-center gap-1.5 rounded-xl bg-green-950 py-3.5 text-sm font-bold text-white hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-40"
       >
         Continue to Review
         <ChevronRight size={16} />

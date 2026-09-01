@@ -13,7 +13,7 @@ export default function DiseaseBreakdown() {
   return (
     <div className="rounded-2xl border border-surface-border bg-green-950 p-4">
       <h3 className="text-sm font-semibold text-white">Disease Breakdown</h3>
-      <p className="text-xs text-slate-500">Current active cases</p>
+      <p className="text-xs text-white">Current active cases</p>
 
       <div className="mt-3 h-48 w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -37,7 +37,7 @@ export default function DiseaseBreakdown() {
                 borderRadius: 8,
                 fontSize: 12,
               }}
-              labelStyle={{ color: "#e2e8f0" }}
+              labelStyle={{ color: "#ffffff" }}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -47,7 +47,7 @@ export default function DiseaseBreakdown() {
         {data.map((d) => (
           <span
             key={d.name}
-            className="flex items-center gap-1.5 text-xs text-slate-400"
+            className="flex items-center gap-1.5 text-xs text-white"
           >
             <span
               className="h-2 w-2 rounded-full"

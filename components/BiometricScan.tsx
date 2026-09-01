@@ -87,13 +87,13 @@ export default function BiometricScan() {
           )}
         </div>
 
-        <h2 className="mt-6 text-lg font-bold text-white">
+        <h2 className="mt-6 text-lg font-bold text-black">
           {state === "idle" && config.idleHeading}
           {state === "scanning" && "Scanning..."}
           {state === "success" && "Match found!"}
           {state === "failed" && "No match found"}
         </h2>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-black">
           {state === "idle" && config.idleSubtext}
           {state === "scanning" && "Hold still, please wait."}
           {state === "success" && "Redirecting to patient profile..."}
@@ -112,10 +112,10 @@ export default function BiometricScan() {
       )}
 
       <div className="mt-6 rounded-xl border border-surface-border bg-white/[0.02] p-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Tips</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-black">Tips</p>
         <ul className="mt-2 space-y-1.5">
           {config.tips.map((tip) => (
-            <li key={tip} className="flex items-start gap-2 text-sm text-green-950">
+            <li key={tip} className="flex items-start gap-2 text-sm text-black">
               <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-green-950" />
               {tip}
             </li>

@@ -14,39 +14,39 @@ export default function OfflineQueue() {
 
   return (
     <div className="mx-auto w-full max-w-md px-5 pb-6 pt-8">
-      <h1 className="text-xl font-bold text-white">Offline Queue</h1>
+      <h1 className="text-xl font-bold text-black">Offline Queue</h1>
 
-      <div className="mt-4 flex items-center gap-3 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3">
+      <div className="mt-4 flex items-center gap-3 rounded-xl border border-red-500/20 bg-red-900 px-4 py-3">
         <WifiOff size={18} className="text-red-400" />
         <div>
           <p className="text-sm font-semibold text-white">Offline Mode</p>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-white">
             Data saved locally · {totalPending} items awaiting sync
           </p>
         </div>
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-4 text-center">
-          <p className="text-2xl font-bold text-amber-400">{queueSummary.pending}</p>
-          <p className="mt-1 text-xs text-slate-400">Pending</p>
+        <div className="rounded-xl border border-amber-500/20 bg-amber-500 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{queueSummary.pending}</p>
+          <p className="mt-1 text-xs text-white">Pending</p>
         </div>
-        <div className="rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-center">
-          <p className="text-2xl font-bold text-red-400">{queueSummary.failed}</p>
-          <p className="mt-1 text-xs text-slate-400">Failed</p>
+        <div className="rounded-xl border border-red-500/20 bg-red-500 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{queueSummary.failed}</p>
+          <p className="mt-1 text-xs text-white">Failed</p>
         </div>
-        <div className="rounded-xl border border-brand-500/20 bg-brand-500/10 p-4 text-center">
-          <p className="text-2xl font-bold text-brand-400">{queueSummary.synced}</p>
-          <p className="mt-1 text-xs text-slate-400">Synced</p>
+        <div className="rounded-xl border border-brand-500/20 bg-brand-500 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{queueSummary.synced}</p>
+          <p className="mt-1 text-xs text-white">Synced</p>
         </div>
       </div>
 
-      <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 py-3.5 text-sm font-bold text-surface hover:bg-brand-400">
+      <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-green-950 py-3.5 text-sm font-bold text-white hover:bg-green-800">
         <Wifi size={16} />
         Sync Now ({totalPending} pending)
       </button>
 
-      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-black">
         Awaiting Sync
       </p>
       <div className="mt-2 space-y-3">
@@ -55,7 +55,7 @@ export default function OfflineQueue() {
         ))}
       </div>
 
-      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-black">
         Recently Synced
       </p>
       <div className="mt-2 space-y-3">
@@ -77,7 +77,7 @@ function QueueCard({
   return (
     <div
       className={`rounded-xl border p-4 ${
-        muted ? "border-surface-border bg-white/[0.01]" : "border-surface-border bg-white/[0.02]"
+        muted ? "border-surface-border bg-green-950" : "border-surface-border bg-green-950"
       }`}
     >
       <div className="flex items-start justify-between">
@@ -88,10 +88,10 @@ function QueueCard({
         </span>
         <StatusBadge status={item.status} />
       </div>
-      <p className={`mt-2 text-sm font-semibold ${muted ? "text-slate-400" : "text-white"}`}>
+      <p className={`mt-2 text-sm font-semibold ${muted ? "text-white" : "text-white"}`}>
         {item.title}
       </p>
-      <p className="mt-0.5 text-xs text-slate-500">{item.detail}</p>
+      <p className="mt-0.5 text-xs text-white">{item.detail}</p>
     </div>
   );
 }

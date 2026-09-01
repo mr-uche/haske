@@ -40,11 +40,11 @@ export default function MobileLogin() {
               Staff ID
             </label>
             <div className="mt-2 flex items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-3">
-              <User size={16} className="text-slate-500" />
+              <User size={16} className="text-white" />
               <input
                 value={staffId}
                 onChange={(e) => setStaffId(e.target.value)}
-                className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+                className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
                 placeholder="e.g. CHEW-ADA-0042"
               />
             </div>
@@ -55,18 +55,18 @@ export default function MobileLogin() {
               Password
             </label>
             <div className="mt-2 flex items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-3">
-              <Lock size={16} className="text-slate-500" />
+              <Lock size={16} className="text-white" />
               <input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-transparent text-sm text-black placeholder:text-slate-500 focus:outline-none"
+                className="w-full bg-transparent text-sm text-white placeholder:text-white focus:outline-none"
                 placeholder="Enter your password"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword((s) => !s)}
-                className="text-slate-500 hover:text-slate-300"
+                className="text-white hover:text-slate-900"
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
@@ -74,17 +74,17 @@ export default function MobileLogin() {
           </div>
 
           <div className="text-right">
-            <button className="text-sm font-semibold text-black hover:text-brand-300">
+            <button className="text-sm font-semibold text-black hover:text-slate-700">
               Forgot password
             </button>
           </div>
 
-          <button className="w-full rounded-xl bg-green-950 py-3.5 text-sm font-bold text-surface hover:bg-brand-400">
+          <button className="w-full rounded-xl bg-green-950 py-3.5 text-sm font-bold text-white hover:bg-brand-400">
             Sign In
           </button>
 
           <div>
-            <p className="text-center text-xs text-slate-500">Quick fill for demo</p>
+            <p className="text-center text-xs text-black">Quick fill for demo</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               {(Object.keys(demoCredentials) as DemoRole[]).map((role) => (
                 <button

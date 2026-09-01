@@ -30,31 +30,31 @@ export default function GwarmaiSummary() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a1310] flex justify-center">
+    <div className="min-h-screen bg-white flex justify-center">
       <div className="w-full max-w-[420px] px-5 pt-6 pb-10 flex flex-col gap-5">
         {/* Header */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => router.back()}
             aria-label="Go back"
-            className="w-9 h-9 rounded-[10px] bg-[#101c17] border border-[#223129] flex items-center justify-center text-[#eef3ef] shrink-0"
+            className="w-9 h-9 rounded-[10px] bg-green-950 border border-[#223129] flex items-center justify-center text-white shrink-0"
           >
             <ChevronLeft size={18} />
           </button>
-          <h1 className="text-[19px] font-bold tracking-tight text-[#eef3ef]">
+          <h1 className="text-[19px] font-bold tracking-tight text-black">
             Summary
           </h1>
         </div>
 
         {/* Summary rows */}
-        <div className="rounded-[10px] border border-[#223129] bg-[#101c17] divide-y divide-[#223129]">
+        <div className="rounded-[10px] border border-[#223129] bg-green-950 divide-y divide-[#223129]">
           {SUMMARY_ROWS.map((row) => (
             <div
               key={row.label}
               className="flex items-start justify-between gap-4 px-4 py-3.5"
             >
-              <p className="text-[13.5px] text-[#8ba296] shrink-0">{row.label}</p>
-              <p className="text-[13.5px] font-semibold text-[#eef3ef] text-right">
+              <p className="text-[13.5px] text-white shrink-0">{row.label}</p>
+              <p className="text-[13.5px] font-semibold text-white text-right">
                 {row.value}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function GwarmaiSummary() {
 
         {/* Feedback */}
         <div className="flex flex-col gap-2.5">
-          <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
+          <label className="text-xs font-bold tracking-wider uppercase text-white">
             Was the AI Suggestion Helpful?
           </label>
           <div className="flex gap-3">
@@ -72,8 +72,8 @@ export default function GwarmaiSummary() {
               onClick={() => setWasHelpful("yes")}
               className={`flex-1 flex items-center justify-center gap-2 rounded-[10px] border py-3 text-[14.5px] font-semibold transition-colors ${
                 wasHelpful === "yes"
-                  ? "border-[#d9a73b] bg-[#3a2f18] text-[#d9a73b]"
-                  : "border-[#223129] bg-[#101c17] text-[#eef3ef] hover:bg-[#16241d]"
+                  ? "border-green-700 bg-green-950 text-white"
+                  : "border-[#223129] bg-green-950 text-white hover:bg-[#16241d]"
               }`}
             >
               <ThumbsUp size={16} />
@@ -84,7 +84,7 @@ export default function GwarmaiSummary() {
               onClick={() => setWasHelpful("no")}
               className={`flex-1 flex items-center justify-center gap-2 rounded-[10px] border py-3 text-[14.5px] font-semibold transition-colors ${
                 wasHelpful === "no"
-                  ? "border-[#d9a73b] bg-[#3a2f18] text-[#d9a73b]"
+                  ? "border-slate-800 bg-green-800 text-white"
                   : "border-[#223129] bg-[#101c17] text-[#eef3ef] hover:bg-[#16241d]"
               }`}
             >
@@ -98,7 +98,7 @@ export default function GwarmaiSummary() {
         <button
           type="button"
           onClick={handleSave}
-          className="flex items-center justify-center gap-2 rounded-[10px] bg-[#d9a73b] py-3.5 text-[15px] font-bold text-[#0a1310] hover:bg-[#e8bb5e] transition-colors"
+          className="flex items-center justify-center gap-2 rounded-[10px] bg-green-950 py-3.5 text-[15px] font-bold text-white hover:bg-green-700 transition-colors"
         >
           <Save size={16} />
           Save to Encounter

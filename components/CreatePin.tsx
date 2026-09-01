@@ -53,16 +53,16 @@ export default function CreatePin() {
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-green-950 px-4 py-10">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4 py-10">
       <div className="w-full max-w-sm text-center">
         <div className="flex flex-col items-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-400">
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-950 text-white">
             <Activity size={26} />
           </span>
-          <h1 className="mt-4 text-2xl font-bold text-white">
+          <h1 className="mt-4 text-2xl font-bold text-black">
             {stage === "create" ? "Create PIN" : "Confirm PIN"}
           </h1>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-black">
             {stage === "create"
               ? "Set a 4-digit PIN to secure your account"
               : "Re-enter your PIN to confirm"}
@@ -75,8 +75,8 @@ export default function CreatePin() {
               key={i}
               className={`h-4 w-4 rounded-full border-2 transition ${
                 i < activePin.length
-                  ? "border-brand-400 bg-brand-400"
-                  : "border-slate-600 bg-transparent"
+                  ? "border-green-950 bg-green-900"
+                  : "border-slate-600 bg-slate-200"
               }`}
             />
           ))}
@@ -91,7 +91,7 @@ export default function CreatePin() {
             <button
               key={k}
               onClick={() => handleDigit(k)}
-              className="rounded-xl border border-surface-border bg-white/[0.03] py-5 text-xl font-bold text-white hover:bg-white/[0.06] active:bg-white/[0.1]"
+              className="rounded-xl border border-surface-border bg-green-950 py-5 text-xl font-bold text-white hover:bg-green-900 active:bg-green-950"
             >
               {k}
             </button>
@@ -105,7 +105,7 @@ export default function CreatePin() {
           </button>
           <button
             onClick={handleDelete}
-            className="flex items-center justify-center rounded-xl border border-surface-border bg-white/[0.03] py-5 text-white hover:bg-white/[0.06] active:bg-white/[0.1]"
+            className="flex items-center justify-center rounded-xl border border-surface-border bg-green-950 py-5 text-white hover:bg-green-950 active:bg-green-900"
           >
             <Delete size={20} />
           </button>

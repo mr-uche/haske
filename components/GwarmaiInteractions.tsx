@@ -28,25 +28,25 @@ export default function GwarmaiInteractions() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a1310] flex justify-center">
+    <div className="min-h-screen bg-white flex justify-center">
       <div className="w-full max-w-[420px] px-5 pt-6 pb-10 flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => router.back()}
             aria-label="Go back"
-            className="w-9 h-9 rounded-[10px] bg-[#101c17] border border-[#223129] flex items-center justify-center text-[#eef3ef] shrink-0"
+            className="w-9 h-9 rounded-[10px] bg-green-950 border border-[#223129] flex items-center justify-center text-white shrink-0"
           >
             <ChevronLeft size={18} />
           </button>
-          <h1 className="text-[19px] font-bold tracking-tight text-[#eef3ef]">
+          <h1 className="text-[19px] font-bold tracking-tight text-black">
             Drug Interactions
           </h1>
         </div>
 
         {/* Checking interactions for */}
         <div className="flex flex-col gap-2.5">
-          <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
+          <label className="text-xs font-bold tracking-wider uppercase text-black">
             Checking Interactions For
           </label>
 
@@ -54,7 +54,7 @@ export default function GwarmaiInteractions() {
             {medications.map((med) => (
               <span
                 key={med}
-                className="px-3.5 py-1.5 rounded-full border border-[#d9a73b] bg-[#3a2f18] text-[#d9a73b] text-[13.5px] font-medium"
+                className="px-3.5 py-1.5 rounded-full border border-black bg-green-950 text-white text-[13.5px] font-medium"
               >
                 {med}
               </span>
@@ -67,12 +67,12 @@ export default function GwarmaiInteractions() {
               onChange={(e) => setNewMed(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleAddMedication()}
               placeholder="Add concurrent medication..."
-              className="flex-1 bg-[#101c17] border border-[#223129] rounded-[10px] px-4 py-3 text-[14.5px] text-[#eef3ef] placeholder:text-[#5c7166] focus:outline-none focus:border-[#d9a73b]"
+              className="flex-1 bg-green-950 border border-black rounded-[10px] px-4 py-3 text-[14.5px] text-white placeholder:text-white focus:outline-none focus:border-green-800"
             />
             <button
               onClick={handleAddMedication}
               aria-label="Add medication"
-              className="w-11 h-11 shrink-0 rounded-[10px] bg-[#3a2f18] border border-[#d9a73b] flex items-center justify-center text-[#d9a73b] hover:bg-[#4a3c20] transition-colors"
+              className="w-11 h-11 shrink-0 rounded-[10px] bg-green-950 border border-black flex items-center justify-center text-white hover:bg-[#4a3c20] transition-colors"
             >
               <Plus size={18} />
             </button>
@@ -81,7 +81,7 @@ export default function GwarmaiInteractions() {
 
         {/* Interaction check */}
         <div className="flex flex-col gap-2.5">
-          <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
+          <label className="text-xs font-bold tracking-wider uppercase text-black">
             Interaction Check
           </label>
 
@@ -89,22 +89,22 @@ export default function GwarmaiInteractions() {
             <div className="rounded-[10px] border border-[#d9a73b] bg-[#3a2f18] px-4 py-3.5 flex gap-3 items-start">
               <span className="text-[#d9a73b] mt-0.5">⚠</span>
               <div>
-                <p className="text-[14.5px] font-semibold text-[#d9a73b]">
+                <p className="text-[14.5px] font-semibold text-white">
                   Interaction Found
                 </p>
-                <p className="text-[13px] text-[#d9c99a] mt-0.5">
+                <p className="text-[13px] text-white mt-0.5">
                   Review the combination before prescribing.
                 </p>
               </div>
             </div>
           ) : (
-            <div className="rounded-[10px] border border-[#d9a73b] bg-[#101c17] px-4 py-3.5 flex gap-3 items-start">
-              <CheckCircle2 size={18} className="text-[#d9a73b] shrink-0 mt-0.5" />
+            <div className="rounded-[10px] border border-bllack bg-green-950 px-4 py-3.5 flex gap-3 items-start">
+              <CheckCircle2 size={18} className="text-white shrink-0 mt-0.5" />
               <div>
-                <p className="text-[14.5px] font-semibold text-[#d9a73b]">
+                <p className="text-[14.5px] font-semibold text-white">
                   No Interactions Found
                 </p>
-                <p className="text-[13px] text-[#8ba296] mt-0.5">
+                <p className="text-[13px] text-white mt-0.5">
                   Current drug combination appears safe.
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default function GwarmaiInteractions() {
         {/* Dosage calculator link */}
         <button
           onClick={() => router.push("/mobile/gwarmai/dosage-calculator")}
-          className="flex items-center gap-2 text-[14px] font-medium text-[#d9a73b] hover:text-[#e8bb5e] transition-colors self-start"
+          className="flex items-center gap-2 text-[14px] font-medium text-white hover:text-black transition-colors self-start"
         >
           <Calculator size={16} />
           Dosage Calculator (Weight-based)
@@ -125,7 +125,7 @@ export default function GwarmaiInteractions() {
         <button
           type="button"
           onClick={handleContinue}
-          className="mt-2 flex items-center justify-center gap-2 rounded-[10px] bg-[#d9a73b] py-3.5 text-[15px] font-bold text-[#0a1310] hover:bg-[#e8bb5e] transition-colors"
+          className="mt-2 flex items-center justify-center gap-2 rounded-[10px] bg-green-950 py-3.5 text-[15px] font-bold text-white hover:bg-green-700 transition-colors"
         >
           Continue to Prescription
           <ChevronRight size={18} />

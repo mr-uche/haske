@@ -105,14 +105,14 @@ export default function ActiveAlerts() {
                   <p className="text-sm font-semibold text-white">
                     {a.title}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-500">
+                  <p className="mt-0.5 text-xs text-white">
                     {a.location}
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-500">{a.time}</span>
-                <ChevronRight size={16} className="text-slate-600" />
+                <span className="text-xs text-white">{a.time}</span>
+                <ChevronRight size={16} className="text-white" />
               </div>
             </button>
           );

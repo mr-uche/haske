@@ -103,8 +103,8 @@ const levelStyles: Record<Level, string> = {
 };
 
 const levelBorder: Record<Level, string> = {
-  critical: "border-red-500/30 bg-red-500/5",
-  high: "border-orange-500/20 bg-green-950",
+  critical: "border-red-500/10 bg-green-950",
+  high: "border-orange-500/10 bg-green-950",
   moderate: "border-surface-border bg-green-950",
 };
 
@@ -129,7 +129,7 @@ export default function EscalationWorkflow() {
               key={e.disease + e.location}
               onClick={() => setSelected(i)}
               className={`w-full rounded-xl border p-4 text-left transition ${
-                selected === i ? "border-green-950" : levelBorder[e.level]
+                selected === i ? "border-green-400 bg-green-600" : levelBorder[e.level]
               }`}
             >
               <div className="flex items-center justify-between  ">
@@ -139,14 +139,14 @@ export default function EscalationWorkflow() {
                     {e.level}
                   </span>
                 </div>
-                <ChevronRight size={15} className="text-slate-600" />
+                <ChevronRight size={15} className="text-white" />
               </div>
-              <p className="mt-2 flex items-center gap-1 text-xs text-slate-500">
+              <p className="mt-2 flex items-center gap-1 text-xs text-white">
                 <MapPin size={11} /> {e.location}
               </p>
               <div className="mt-2 flex items-center justify-between">
-                <span className="text-xs text-slate-500">{e.handler}</span>
-                <span className="flex items-center gap-1 text-xs font-medium text-slate-400">
+                <span className="text-xs text-white">{e.handler}</span>
+                <span className="flex items-center gap-1 text-xs font-medium text-white">
                   <Clock size={11} /> {e.time}         
                 </span>
               </div>
@@ -167,7 +167,7 @@ export default function EscalationWorkflow() {
                   {active.level}
                 </span>
               </div>
-              <p className="mt-1 flex items-center gap-3 text-xs text-slate-500">
+              <p className="mt-1 flex items-center gap-3 text-xs text-white">
                 <span className="flex items-center gap-1">
                   <MapPin size={11} /> {active.location} LGA
                 </span>
@@ -177,7 +177,7 @@ export default function EscalationWorkflow() {
               </p>
             </div>
             <div className="text-right">
-              <p className="text-xs text-slate-500">Auto-escalates in</p>
+              <p className="text-xs text-white">Auto-escalates in</p>
               <p className="text-lg font-bold text-orange-400">{active.autoEscalatesIn}</p>
             </div>
           </div>
@@ -185,15 +185,15 @@ export default function EscalationWorkflow() {
           <div className="mt-5 grid grid-cols-3 gap-4">
             <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
               <p className="text-2xl font-bold text-red-400">{active.activeCases}</p>
-              <p className="mt-1 text-xs text-slate-500">Active Cases</p>
+              <p className="mt-1 text-xs text-red-400">Active Cases</p>
             </div>
             <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
               <p className="text-2xl font-bold text-white">{active.threshold}</p>
-              <p className="mt-1 text-xs text-slate-500">Threshold</p>
+              <p className="mt-1 text-xs text-white">Threshold</p>
             </div>
             <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
               <p className="text-2xl font-bold text-brand-400">{active.escalationLevel}</p>
-              <p className="mt-1 text-xs text-slate-500">Escalation Level</p>
+              <p className="mt-1 text-xs text-grand-400">Escalation Level</p>
             </div>
           </div>
         </div>
@@ -234,10 +234,10 @@ export default function EscalationWorkflow() {
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-slate-500">{step.detail}</p>
+                      <p className="text-xs text-white">{step.detail}</p>
                     </div>
                   </div>
-                  <span className="text-xs text-slate-500">{step.channel}</span>
+                  <span className="text-xs text-white">{step.channel}</span>
                 </div>
               );
             })}

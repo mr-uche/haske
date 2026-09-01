@@ -42,14 +42,14 @@ export default function PinEntry() {
   const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-green-950 px-4 py-10">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4 py-10">
       <div className="w-full max-w-sm text-center">
         <div className="flex flex-col items-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-400">
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-950 text-white">
             <Activity size={26} />
           </span>
-          <h1 className="mt-4 text-2xl font-bold text-white">Enter PIN</h1>
-          <p className="mt-1 text-sm text-slate-400">Welcome back, {userName}</p>
+          <h1 className="mt-4 text-2xl font-bold text-black">Enter PIN</h1>
+          <p className="mt-1 text-sm text-black">Welcome back, {userName}</p>
         </div>
 
         <div
@@ -62,8 +62,8 @@ export default function PinEntry() {
                 i < pin.length
                   ? error
                     ? "border-red-500 bg-red-500"
-                    : "border-brand-400 bg-brand-400"
-                  : "border-slate-600 bg-transparent"
+                    : "border-green-950 bg-brand-400"
+                  : "border-green-900 bg-slate-300"
               }`}
             />
           ))}
@@ -78,7 +78,7 @@ export default function PinEntry() {
             <button
               key={k}
               onClick={() => handleDigit(k)}
-              className="rounded-xl border border-surface-border bg-white/[0.03] py-5 text-xl font-bold text-white hover:bg-white/[0.06] active:bg-white/[0.1]"
+              className="rounded-xl border border-surface-border bg-green-950 py-5 text-xl font-bold text-white hover:bg-green-800 active:bg-green-900"
             >
               {k}
             </button>
@@ -86,19 +86,19 @@ export default function PinEntry() {
           <div />
           <button
             onClick={() => handleDigit("0")}
-            className="rounded-xl border border-surface-border bg-white/[0.03] py-5 text-xl font-bold text-white hover:bg-white/[0.06] active:bg-white/[0.1]"
+            className="rounded-xl border border-surface-border bg-green-950 py-5 text-xl font-bold text-white hover:bg-green-900 active:bg-green-900"
           >
             0
           </button>
           <button
             onClick={handleDelete}
-            className="flex items-center justify-center rounded-xl border border-surface-border bg-white/[0.03] py-5 text-white hover:bg-white/[0.06] active:bg-white/[0.1]"
+            className="flex items-center justify-center rounded-xl border border-surface-border bg-green-950 py-5 text-white hover:bg-green-950 active:bg-green-900"
           >
             <Delete size={20} />
           </button>
         </div>
 
-        <button className="mt-6 text-sm font-semibold text-brand-400 hover:text-brand-300">
+        <button className="mt-6 text-sm font-semibold text-black hover:text-slate-800">
           Use Staff ID & Password instead
         </button>
       </div>

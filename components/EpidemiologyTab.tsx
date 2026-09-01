@@ -23,7 +23,7 @@ export default function EpidemiologyTab() {
         <div className="flex items-start justify-between">
           <div>
             <h3 className="text-sm font-semibold text-white">Emerging Disease Patterns</h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-white">
               AI-detected symptom clusters before reaching alert threshold
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function EpidemiologyTab() {
               className="flex flex-col gap-3 rounded-xl border border-surface-border bg-white/[0.02] p-4 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-300">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-white">
                   <Activity size={16} />
                 </span>
                 <div>
@@ -51,7 +51,7 @@ export default function EpidemiologyTab() {
                       {p.status}
                     </span>
                   </div>
-                  <p className="mt-0.5 flex items-center gap-1 text-xs text-slate-500">
+                  <p className="mt-0.5 flex items-center gap-1 text-xs text-white">
                     <MapPin size={11} /> {p.location} · {p.cases} cases · AI confidence:{" "}
                     <span className="font-semibold text-brand-400">{p.aiConfidence}%</span>
                   </p>
@@ -59,7 +59,7 @@ export default function EpidemiologyTab() {
               </div>
 
               <div className="flex items-center gap-2">
-                <button className="flex items-center gap-1.5 rounded-lg border border-surface-border bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/10">
+                <button className="flex items-center gap-1.5 rounded-lg border border-surface-border bg-white/5 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10">
                   <Eye size={13} />
                   View Cases
                 </button>
@@ -81,14 +81,14 @@ export default function EpidemiologyTab() {
               <BarChart data={diseaseBurden} margin={{ left: -20, right: 10 }}>
                 <XAxis
                   dataKey="lga"
-                  stroke="#64748b"
-                  tick={{ fontSize: 11, fill: "#64748b" }}
+                  stroke="#ffffff"
+                  tick={{ fontSize: 11, fill: "#ffffff" }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  stroke="#64748b"
-                  tick={{ fontSize: 11, fill: "#64748b" }}
+                  stroke="#ffffff"
+                  tick={{ fontSize: 11, fill: "#ffffff" }}
                   axisLine={false}
                   tickLine={false}
                 />
@@ -110,7 +110,7 @@ export default function EpidemiologyTab() {
 
         <div className="rounded-2xl border border-surface-border bg-green-950 p-4">
           <h3 className="text-sm font-semibold text-white">Symptom → Outbreak Correlation</h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-white">
             How symptom reports preceded confirmed outbreaks
           </p>
 
@@ -120,7 +120,7 @@ export default function EpidemiologyTab() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-semibold text-white">{s.symptom}</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-white">
                       {s.disease} · {s.daysBefore}
                     </p>
                   </div>

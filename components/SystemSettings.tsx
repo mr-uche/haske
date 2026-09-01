@@ -76,7 +76,7 @@ function SystemHealthTab() {
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-white">Service Status</h3>
-          <button className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-200">
+          <button className="flex items-center gap-1.5 text-xs font-semibold text-white hover:text-slate-200">
             <RefreshCw size={13} />
             Refresh
           </button>
@@ -103,11 +103,11 @@ function SystemHealthTab() {
                 </div>
                 <div className="mt-3 flex items-center justify-between text-xs">
                   <div>
-                    <p className="text-slate-500">Uptime</p>
+                    <p className="text-white">Uptime</p>
                     <p className="font-semibold text-brand-400">{s.uptime}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-slate-500">Latency</p>
+                    <p className="text-white">Latency</p>
                     <p className="font-semibold text-slate-300">{s.latency}</p>
                   </div>
                 </div>
@@ -121,16 +121,16 @@ function SystemHealthTab() {
         <h3 className="text-sm font-semibold text-white">Haske Hub Network</h3>
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-surface-border bg-white/[0.02] p-5 text-center">
-            <p className="text-3xl font-bold text-brand-400">{hubNetwork.total}</p>
-            <p className="mt-1 text-sm text-slate-400">Total Hubs</p>
+            <p className="text-3xl font-bold text-white">{hubNetwork.total}</p>
+            <p className="mt-1 text-sm text-white">Total Hubs</p>
           </div>
           <div className="rounded-xl border border-surface-border bg-white/[0.02] p-5 text-center">
-            <p className="text-3xl font-bold text-brand-400">{hubNetwork.online}</p>
-            <p className="mt-1 text-sm text-slate-400">Online</p>
+            <p className="text-3xl font-bold text-white">{hubNetwork.online}</p>
+            <p className="mt-1 text-sm text-white">Online</p>
           </div>
           <div className="rounded-xl border border-surface-border bg-white/[0.02] p-5 text-center">
             <p className="text-3xl font-bold text-red-400">{hubNetwork.offline}</p>
-            <p className="mt-1 text-sm text-slate-400">Offline</p>
+            <p className="mt-1 text-sm text-red-400">Offline</p>
           </div>
         </div>
       </div>

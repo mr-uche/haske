@@ -28,26 +28,26 @@ export default function GwarmaiOverride() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a1310] flex justify-center">
+    <div className="min-h-screen bg-white flex justify-center">
       <div className="w-full max-w-[420px] px-5 pt-6 pb-10 flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => router.back()}
             aria-label="Go back"
-            className="w-9 h-9 rounded-[10px] bg-[#101c17] border border-[#223129] flex items-center justify-center text-[#eef3ef] shrink-0"
+            className="w-9 h-9 rounded-[10px] bg-green-950 border border-[#223129] flex items-center justify-center text-white shrink-0"
           >
             <ChevronLeft size={18} />
           </button>
-          <h1 className="text-[19px] font-bold tracking-tight text-[#eef3ef]">
+          <h1 className="text-[19px] font-bold tracking-tight text-black">
             Override AI Diagnosis
           </h1>
         </div>
 
         {/* Warning */}
-        <div className="bg-[#3a2f18] border border-[#d9a73b] rounded-[10px] px-4 py-3.5 flex gap-2.5 items-start">
+        <div className="bg-green-950 border border-[#d9a73b] rounded-[10px] px-4 py-3.5 flex gap-2.5 items-start">
           <AlertTriangle size={18} className="text-[#d9a73b] shrink-0 mt-0.5" />
-          <p className="text-[13.5px] leading-relaxed text-[#d9c99a]">
+          <p className="text-[13.5px] leading-relaxed text-white">
             You are overriding the AI recommendation. Your clinical judgment
             will be recorded and reviewed for quality assurance.
           </p>
@@ -56,14 +56,14 @@ export default function GwarmaiOverride() {
         {/* Diagnosis */}
         <div className="flex flex-col gap-2.5">
           <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
-            Your Diagnosis <span className="text-[#d9a73b]">*</span>
+            Your Diagnosis <span className="text-black">*</span>
           </label>
           <select
             value={diagnosis}
             onChange={(e) => setDiagnosis(e.target.value)}
-            className="bg-[#101c17] border border-[#223129] rounded-[10px] px-4 py-3.5 text-[15px] text-[#eef3ef] appearance-none cursor-pointer focus:outline-none focus:border-[#d9a73b]"
+            className="bg-green-950 border border-[#223129] rounded-[10px] px-4 py-3.5 text-[15px] text-white appearance-none cursor-pointer focus:outline-none focus:border-slate-700"
           >
-            <option value="" disabled className="text-[#5c7166]">
+            <option value="" disabled className="text-white">
               Select diagnosis
             </option>
             <option value="malaria">Malaria</option>
@@ -76,7 +76,7 @@ export default function GwarmaiOverride() {
         {/* Reason */}
         <div className="flex flex-col gap-2.5">
           <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
-            Reason for Override <span className="text-[#d9a73b]">*</span>
+            Reason for Override <span className="text-black">*</span>
           </label>
           <div className="flex flex-col gap-2.5">
             {REASONS.map((r) => {
@@ -88,17 +88,17 @@ export default function GwarmaiOverride() {
                   onClick={() => setReason(r.value)}
                   className={`flex items-center gap-3 rounded-[10px] border px-4 py-3.5 text-left text-[14.5px] transition-colors ${
                     selected
-                      ? "border-[#d9a73b] bg-[#d9a73b]/10 text-[#eef3ef]"
-                      : "border-[#223129] bg-[#101c17] text-[#eef3ef] hover:bg-[#16241d]"
+                      ? "border-slate-700 bg-green-500 text-white"
+                      : "border-[#223129] bg-green-950 text-white hover:bg-[#16241d]"
                   }`}
                 >
                   <span
                     className={`w-[18px] h-[18px] rounded-full border shrink-0 flex items-center justify-center ${
-                      selected ? "border-[#d9a73b]" : "border-[#5c7166]"
+                      selected ? "border-slate-700" : "border-black"
                     }`}
                   >
                     {selected && (
-                      <span className="w-[9px] h-[9px] rounded-full bg-[#d9a73b]" />
+                      <span className="w-[9px] h-[9px] rounded-full bg-green-800" />
                     )}
                   </span>
                   {r.label}
@@ -110,9 +110,9 @@ export default function GwarmaiOverride() {
 
         {/* Notes */}
         <div className="flex flex-col gap-2.5">
-          <label className="text-xs font-bold tracking-wider uppercase text-[#8ba296]">
+          <label className="text-xs font-bold tracking-wider uppercase text-black">
             Additional Notes{" "}
-            <span className="normal-case font-normal text-[#5c7166]">
+            <span className="normal-case font-normal text-black">
               (optional)
             </span>
           </label>
@@ -121,7 +121,7 @@ export default function GwarmaiOverride() {
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Describe your clinical reasoning..."
             rows={4}
-            className="bg-[#101c17] border border-[#223129] rounded-[10px] px-4 py-3.5 text-[14.5px] text-[#eef3ef] placeholder:text-[#5c7166] resize-none focus:outline-none focus:border-[#d9a73b]"
+            className="bg-green-950 border border-[#223129] rounded-[10px] px-4 py-3.5 text-[14.5px] text-[#eef3ef] placeholder:text-white resize-none focus:outline-none focus:border-green-300"
           />
         </div>
 
@@ -130,7 +130,7 @@ export default function GwarmaiOverride() {
           type="button"
           disabled={!canSubmit}
           onClick={handleConfirm}
-          className="mt-1 flex items-center justify-center gap-2 rounded-[10px] border border-[#d9a73b] py-3.5 text-[15px] font-bold text-[#d9a73b] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#3a2f18] transition-colors"
+          className="mt-1 flex items-center justify-center gap-2 rounded-[10px] border border-black bg-green-950 py-3.5 text-[15px] font-bold text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-green-600 transition-colors"
         >
           <AlertTriangle size={16} />
           Confirm Override

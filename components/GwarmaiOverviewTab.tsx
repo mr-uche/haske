@@ -29,7 +29,7 @@ export default function GwarmaiOverviewTab() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-semibold text-white">Sessions & Accuracy Trend</h3>
-              <p className="text-xs text-slate-500">Monthly Gwarmai usage across all CHEWs</p>
+              <p className="text-xs text-white">Monthly Gwarmai usage across all CHEWs</p>
             </div>
             <span className="flex items-center gap-1 text-xs font-semibold text-brand-400">
               <TrendingUp size={12} /> +91.2% accuracy this month
@@ -47,14 +47,14 @@ export default function GwarmaiOverviewTab() {
                 </defs>
                 <XAxis
                   dataKey="month"
-                  stroke="#64748b"
-                  tick={{ fontSize: 11, fill: "#64748b" }}
+                  stroke="#ffffff"
+                  tick={{ fontSize: 11, fill: "#ffffff" }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  stroke="#64748b"
-                  tick={{ fontSize: 11, fill: "#64748b" }}
+                  stroke="#ffffff"
+                  tick={{ fontSize: 11, fill: "#ffffff" }}
                   axisLine={false}
                   tickLine={false}
                 />
@@ -112,7 +112,7 @@ export default function GwarmaiOverviewTab() {
           <div className="mt-2 space-y-2">
             {languageUsage.map((l) => (
               <div key={l.name} className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-300">
+                <span className="flex items-center gap-2 text-white">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: l.color }} />
                   {l.name}
                 </span>
@@ -141,7 +141,7 @@ function StatCard({
     <div className="rounded-2xl border border-brand-500/20 bg-green-950 p-5">
       <Icon size={20} className={iconColor} />
       <p className="mt-3 text-3xl font-bold text-white">{value}</p>
-      <p className="text-xs text-slate-400">{label}</p>
+      <p className="text-xs text-white">{label}</p>
     </div>
   );
 }

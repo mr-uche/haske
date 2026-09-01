@@ -44,13 +44,13 @@ export default function AuditConfigTab() {
             >
               <div>
                 <p className="text-sm font-semibold text-white">{c.title}</p>
-                <p className="mt-0.5 text-xs text-slate-500">{c.description}</p>
+                <p className="mt-0.5 text-xs text-white">{c.description}</p>
               </div>
               <div className="flex shrink-0 items-center gap-2">
                 <span className="rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1.5 font-mono text-xs font-semibold text-brand-400">
                   {c.value}
                 </span>
-                <button className="text-slate-500 hover:text-slate-300">
+                <button className="text-white hover:text-slate-300">
                   <Settings size={15} />
                 </button>
               </div>
@@ -63,7 +63,7 @@ export default function AuditConfigTab() {
         <div className="flex items-start justify-between">
           <div>
             <h3 className="text-sm font-semibold text-white">Governance Audit Log</h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-white">
               All model governance actions — validations, flags, training inclusions
             </p>
           </div>
@@ -90,12 +90,12 @@ export default function AuditConfigTab() {
                   <div>
                     <p className="text-sm">
                       <span className="font-semibold text-white">{entry.action}</span>{" "}
-                      <span className="text-slate-500">by {entry.actor}</span>
+                      <span className="text-white">by {entry.actor}</span>
                     </p>
-                    <p className="mt-0.5 text-xs text-slate-500">{entry.detail}</p>
+                    <p className="mt-0.5 text-xs text-white">{entry.detail}</p>
                   </div>
                 </div>
-                <span className="text-xs text-slate-500">{entry.time}</span>
+                <span className="text-xs text-white">{entry.time}</span>
               </div>
             );
           })}

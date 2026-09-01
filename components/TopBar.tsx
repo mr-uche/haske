@@ -48,16 +48,16 @@ export default function TopBar({
       </div>
 
       <div className="flex items-center gap-5">
-        <span className="flex items-center gap-1.5 rounded-full bg-brand-500/10 px-3 py-1.5 text-xs font-semibold text-brand-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+        <span className="flex items-center gap-1.5 rounded-full bg-green-600 px-3 py-1.5 text-xs font-semibold text-white">
+          <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
           LIVE
         </span>
         <div className="text-right leading-tight">
           <p className="text-sm font-semibold text-white">{time}</p>
           <p className="text-[11px] text-white">{date}</p>
         </div>
-        <Wifi size={18} className="text-brand-400" />
-        <button className="relative text-slate-400 hover:text-slate-200">
+        <Wifi size={18} className="text-green-400" />
+        <button className="relative text-slate-100 hover:text-slate-200">
           <Bell size={19} />
           <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
             5

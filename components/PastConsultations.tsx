@@ -26,25 +26,25 @@ export default function PastConsultations() {
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.back()}
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 text-slate-300 hover:bg-white/10"
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-950 text-white hover:bg-white/10"
         >
           <ChevronLeft size={18} />
         </button>
-        <h1 className="text-lg font-bold text-white">Past Consultations</h1>
+        <h1 className="text-lg font-bold text-black">Past Consultations</h1>
       </div>
 
       <div className="mt-5 grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
-          <p className="text-2xl font-bold text-brand-400">{total}</p>
-          <p className="mt-1 text-xs text-slate-400">Total</p>
+        <div className="rounded-xl border border-surface-border bg-green-950 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{total}</p>
+          <p className="mt-1 text-xs text-white">Total</p>
         </div>
-        <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
-          <p className="text-2xl font-bold text-brand-400">{accepted}</p>
-          <p className="mt-1 text-xs text-slate-400">Accepted</p>
+        <div className="rounded-xl border border-surface-border bg-green-950 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{accepted}</p>
+          <p className="mt-1 text-xs text-">Accepted</p>
         </div>
-        <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4 text-center">
-          <p className="text-2xl font-bold text-orange-400">{overridden}</p>
-          <p className="mt-1 text-xs text-slate-400">Overridden</p>
+        <div className="rounded-xl border border-surface-border bg-green-950 p-4 text-center">
+          <p className="text-2xl font-bold text-white">{overridden}</p>
+          <p className="mt-1 text-xs text-white">Overridden</p>
         </div>
       </div>
 
@@ -61,8 +61,8 @@ export default function PastConsultations() {
             onClick={() => setFilter(f.key)}
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               filter === f.key
-                ? "bg-brand-500/15 text-brand-400"
-                : "bg-white/5 text-slate-400"
+                ? "bg-green-950 text-white"
+                : "bg-white/5 text-black"
             }`}
           >
             {f.label}
@@ -74,7 +74,7 @@ export default function PastConsultations() {
         {filtered.map((c, i) => (
           <button
             key={i}
-            className="flex w-full items-center justify-between rounded-xl border border-surface-border bg-white/[0.02] p-4 text-left"
+            className="flex w-full items-center justify-between rounded-xl border border-surface-border bg-green-950 p-4 text-left"
           >
             <div className="flex items-center gap-3">
               <span
@@ -86,7 +86,7 @@ export default function PastConsultations() {
               </span>
               <div>
                 <p className="text-sm font-semibold text-white">{c.diagnosis}</p>
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-xs text-white">
                   {c.patientName} · {c.time}
                 </p>
                 {c.overridden && (
@@ -102,7 +102,7 @@ export default function PastConsultations() {
               >
                 {c.confidence}%
               </span>
-              <ChevronRight size={16} className="text-slate-600" />
+              <ChevronRight size={16} className="text-white" />
             </div>
           </button>
         ))}

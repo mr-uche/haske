@@ -7,26 +7,26 @@ export default function ClinicalOversightTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-5">
-          <p className="text-3xl font-bold text-orange-400">{oversightSummary.aiOverrides}</p>
+        <div className="rounded-2xl border border-orange-500/20 bg-orange-500 p-5">
+          <p className="text-3xl font-bold text-white">{oversightSummary.aiOverrides}</p>
           <p className="mt-2 text-sm font-semibold text-white">AI Overrides</p>
-          <p className="text-xs text-slate-400">Require doctor review</p>
+          <p className="text-xs text-white">Require doctor review</p>
         </div>
-        <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-5">
-          <p className="text-3xl font-bold text-red-400">{oversightSummary.redFlagCases}</p>
+        <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
+          <p className="text-3xl font-bold text-white">{oversightSummary.redFlagCases}</p>
           <p className="mt-2 text-sm font-semibold text-white">Red Flag Cases</p>
-          <p className="text-xs text-slate-400">Urgent attention</p>
+          <p className="text-xs text-white">Urgent attention</p>
         </div>
-        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-5">
-          <p className="text-3xl font-bold text-amber-400">{oversightSummary.referralsSuggested}</p>
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
+          <p className="text-3xl font-bold text-white">{oversightSummary.referralsSuggested}</p>
           <p className="mt-2 text-sm font-semibold text-white">Referrals Suggested</p>
-          <p className="text-xs text-slate-400">Pending confirmation</p>
+          <p className="text-xs text-white">Pending confirmation</p>
         </div>
       </div>
 
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <h3 className="text-sm font-semibold text-white">AI Override Review</h3>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-white">
           Cases where CHEWs disagreed with Gwarmai — requires doctor validation
         </p>
 
@@ -46,7 +46,7 @@ export default function ClinicalOversightTab() {
                     {" · "}
                     {c.chew}
                     {" · "}
-                    <span className="text-slate-500">{c.time}</span>
+                    <span className="text-white">{c.time}</span>
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -63,20 +63,20 @@ export default function ClinicalOversightTab() {
 
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-surface-border bg-white/[0.02] p-3">
-                  <p className="text-xs text-slate-500">AI Suggested</p>
+                  <p className="text-xs text-white">AI Suggested</p>
                   <p className="mt-1 text-sm font-semibold text-red-400">{c.aiSuggested}</p>
-                  <p className="text-xs text-slate-500">{c.aiConfidence}% confidence</p>
+                  <p className="text-xs text-white">{c.aiConfidence}% confidence</p>
                 </div>
                 <div className="rounded-lg border border-surface-border bg-white/[0.02] p-3">
-                  <p className="text-xs text-slate-500">CHEW Selected</p>
+                  <p className="text-xs text-white">CHEW Selected</p>
                   <p className="mt-1 text-sm font-semibold text-brand-400">{c.chewSelected}</p>
-                  <p className="text-xs text-slate-500">{c.chewIcdCode}</p>
+                  <p className="text-xs text-white">{c.chewIcdCode}</p>
                 </div>
               </div>
 
               <div className="mt-3 rounded-lg border border-surface-border bg-white/[0.02] p-3 text-xs text-slate-300">
-                <span className="text-slate-500">Override reason: </span>
-                <span className="font-medium text-slate-200">{c.overrideReason}</span>
+                <span className="text-white">Override reason: </span>
+                <span className="font-medium text-white">{c.overrideReason}</span>
               </div>
             </div>
           ))}

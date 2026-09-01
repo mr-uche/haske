@@ -11,20 +11,20 @@ export default function ClaimsIntelTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-500/10 p-5">
-          <p className="text-3xl font-bold text-brand-400">
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
+          <p className="text-3xl font-bold text-white">
             {claimsSummary.aiValidatedClaims.toLocaleString()}
           </p>
           <p className="mt-2 text-sm font-semibold text-white">AI-Validated Claims</p>
         </div>
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-5">
-          <p className="text-3xl font-bold text-orange-400">
+        <div className="rounded-2xl border border-orange-500/50 bg-orange-500 p-5">
+          <p className="text-3xl font-bold text-white">
             {claimsSummary.diagnosisMismatches}
           </p>
           <p className="mt-2 text-sm font-semibold text-white">Diagnosis Mismatches</p>
         </div>
-        <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-5">
-          <p className="text-3xl font-bold text-red-400">
+        <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
+          <p className="text-3xl font-bold text-white">
             {claimsSummary.highOverrideChews}
           </p>
           <p className="mt-2 text-sm font-semibold text-white">High Override Rate CHEWs</p>
@@ -33,7 +33,7 @@ export default function ClaimsIntelTab() {
 
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <h3 className="text-sm font-semibold text-white">Diagnosis–Drug Mismatches</h3>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-white">
           Claims where the prescribed drug doesn't match the AI or CHEW diagnosis
         </p>
 
@@ -49,9 +49,9 @@ export default function ClaimsIntelTab() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">
-                    {c.patientName} <span className="font-normal text-slate-500">· {c.chew}</span>
+                    {c.patientName} <span className="font-normal text-white">· {c.chew}</span>
                   </p>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-white">
                     AI: <span className="font-semibold text-red-400">{c.aiDiagnosis}</span>
                     {" → "}
                     CHEW: <span className="font-semibold text-brand-400">{c.chewDiagnosis}</span>
@@ -63,7 +63,7 @@ export default function ClaimsIntelTab() {
               </div>
 
               <div className="flex shrink-0 items-center gap-2">
-                <button className="flex items-center gap-1.5 rounded-lg border border-surface-border bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-white/10">
+                <button className="flex items-center gap-1.5 rounded-lg border border-surface-border bg-white/5 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/10">
                   <Search size={13} />
                   Review Claim
                 </button>
@@ -79,7 +79,7 @@ export default function ClaimsIntelTab() {
 
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <h3 className="text-sm font-semibold text-white">High Override Rate Providers</h3>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-white">
           CHEWs with abnormally high AI override rates — potential fraud indicators
         </p>
 
@@ -95,7 +95,7 @@ export default function ClaimsIntelTab() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">{p.name}</p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-white">
                     {p.location} · {p.sessions} sessions
                   </p>
                 </div>
@@ -104,11 +104,11 @@ export default function ClaimsIntelTab() {
               <div className="flex items-center gap-6">
                 <div className="text-right">
                   <p className="text-sm font-semibold text-red-400">{p.overrideRate}%</p>
-                  <p className="text-xs text-slate-500">Override rate</p>
+                  <p className="text-xs text-white">Override rate</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-semibold text-white">{p.totalOverrides}</p>
-                  <p className="text-xs text-slate-500">Total overrides</p>
+                  <p className="text-xs text-white">Total overrides</p>
                 </div>
                 <button className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs font-semibold text-red-400 hover:bg-red-500/20">
                   Review

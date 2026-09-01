@@ -21,14 +21,14 @@ export default function StaffPerformanceTab() {
   return (
     <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
       <h3 className="text-sm font-semibold text-white">Staff Performance — March 2026</h3>
-      <p className="text-xs text-slate-500">
+      <p className="text-xs text-white">
         Encounters, Gwarmai usage, disease reports, and AI override rates
       </p>
 
       <div className="mt-5 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-3 py-3 font-medium">Staff Member</th>
               <th className="px-3 py-3 font-medium">Encounters</th>
               <th className="px-3 py-3 font-medium">Gwarmai Uses</th>
@@ -59,7 +59,7 @@ export default function StaffPerformanceTab() {
                     ) : (
                       <span className="text-slate-200">
                         {s.gwarmaiUses}{" "}
-                        <span className="text-xs text-slate-500">({s.gwarmaiPercent}%)</span>
+                        <span className="text-xs text-whtie">({s.gwarmaiPercent}%)</span>
                       </span>
                     )}
                   </td>

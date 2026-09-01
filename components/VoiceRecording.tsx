@@ -50,11 +50,11 @@ export default function VoiceRecording() {
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.back()}
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 text-slate-300 hover:bg-white/10"
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-950 text-white hover:bg-green-700"
         >
           <ChevronLeft size={18} />
         </button>
-        <h1 className="text-lg font-bold text-white">Voice Recording</h1>
+        <h1 className="text-lg font-bold text-black">Voice Recording</h1>
       </div>
 
       <div className="mt-24 flex items-end justify-center gap-1">
@@ -62,7 +62,7 @@ export default function VoiceRecording() {
           <span
             key={i}
             className={`w-1 rounded-full transition-all duration-150 ${
-              isRecording ? "bg-brand-400" : "bg-slate-700"
+              isRecording ? "bg-green-950" : "bg-green-950"
             }`}
             style={{ height: `${h}px` }}
           />
@@ -70,10 +70,10 @@ export default function VoiceRecording() {
       </div>
 
       <div className="mt-8 text-center">
-        <p className="font-mono text-4xl font-bold tabular-nums text-white">
+        <p className="font-mono text-4xl font-bold tabular-nums text-black">
           {mins}:{secs}
         </p>
-        <p className="mt-2 text-sm text-brand-400">
+        <p className="mt-2 text-sm text-black">
           {isRecording ? "Recording..." : "Tap to start recording"}
         </p>
       </div>
@@ -82,13 +82,13 @@ export default function VoiceRecording() {
         <button
           onClick={toggleRecording}
           className={`flex h-16 w-16 items-center justify-center rounded-full transition ${
-            isRecording ? "bg-red-500 hover:bg-red-400" : "bg-brand-500 hover:bg-brand-400"
+            isRecording ? "bg-red-500 hover:bg-green-800" : "bg-green-950 hover:bg-green-950"
           }`}
         >
           {isRecording ? (
             <Square size={24} className="fill-white text-white" />
           ) : (
-            <Mic size={26} className="text-surface" />
+            <Mic size={26} className="text-ehite" />
           )}
         </button>
       </div>

@@ -53,8 +53,8 @@ export default function GwarmaiAI() {
             onClick={() => setTab(key)}
             className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition ${
               tab === key
-                ? "bg-green-900 text-black"
-                : "text-slate-900 hover:text-teal-900"
+                ? "bg-green-900 text-white"
+                : "text-slate-900 hover:text-teal-700 hover:bg-green-100"
             }`}
           >
             <Icon size={15} />

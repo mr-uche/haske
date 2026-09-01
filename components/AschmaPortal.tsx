@@ -35,8 +35,8 @@ export default function AschmaPortal() {
             onClick={() => setTab(key)}
             className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition ${
               tab === key
-                ? "bg-green-800 text-white"
-                : "text-slate-900 hover:text-slate-200"
+                ? "bg-green-950 text-white"
+                : "text-slate-900 hover:text-slate-200 hover:bg-green-100"
             }`}
           >
             <Icon size={15} />

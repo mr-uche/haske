@@ -13,34 +13,34 @@ export default function GovernanceTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-500/10 p-5">
-          <p className="text-3xl font-bold text-brand-400">{governanceSummary.modelAccuracy}</p>
+        <div className="rounded-2xl border border-brand-500/50 bg-brand-500 p-5">
+          <p className="text-3xl font-bold text-white">{governanceSummary.modelAccuracy}</p>
           <p className="mt-2 text-sm font-semibold text-white">Model Accuracy</p>
         </div>
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-500/10 p-5">
-          <p className="text-3xl font-bold text-brand-400">{governanceSummary.avgResponseTime}</p>
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
+          <p className="text-3xl font-bold text-white">{governanceSummary.avgResponseTime}</p>
           <p className="mt-2 text-sm font-semibold text-white">Avg Response Time</p>
         </div>
-        <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-5">
-          <p className="text-3xl font-bold text-orange-400">{governanceSummary.overrideRate}</p>
+        <div className="rounded-2xl border border-orange-500/50 bg-orange-500 p-5">
+          <p className="text-3xl font-bold text-white">{governanceSummary.overrideRate}</p>
           <p className="mt-2 text-sm font-semibold text-white">Override Rate</p>
         </div>
-        <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-5">
-          <p className="text-3xl font-bold text-blue-400">{governanceSummary.sessionsThisMonth}</p>
+        <div className="rounded-2xl border border-blue-500/50 bg-blue-500 p-5">
+          <p className="text-3xl font-bold text-white">{governanceSummary.sessionsThisMonth}</p>
           <p className="mt-2 text-sm font-semibold text-white">Sessions This Month</p>
         </div>
       </div>
 
       <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
         <h3 className="text-sm font-semibold text-white">CHEW Adoption Analytics</h3>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-white">
           Per-CHEW Gwarmai usage, acceptance rates and feedback
         </p>
 
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+              <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
                 <th className="px-3 py-3 font-medium">CHEW</th>
                 <th className="px-3 py-3 font-medium">Facility</th>
                 <th className="px-3 py-3 font-medium">Sessions</th>
@@ -97,11 +97,11 @@ export default function GovernanceTab() {
         <div className="flex items-start justify-between">
           <div>
             <h3 className="text-sm font-semibold text-white">Training Data Review Queue</h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-white">
               Anonymized sessions flagged for model fine-tuning
             </p>
           </div>
-          <span className="rounded-full bg-brand-500/15 px-3 py-1.5 text-xs font-semibold text-brand-400">
+          <span className="rounded-full bg-green-600 px-3 py-1.5 text-xs font-semibold text-white">
             {trainingQueue.length} pending review
           </span>
         </div>
@@ -120,7 +120,7 @@ export default function GovernanceTab() {
                   <p className="text-sm font-semibold text-white">
                     Session #{s.id} — Anonymized
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-white">
                     {s.diagnosis} · {s.confidence}% confidence
                     {s.overrideDetected && (
                       <span className="ml-1 font-semibold text-red-400">· Override detected</span>
@@ -130,10 +130,10 @@ export default function GovernanceTab() {
               </div>
 
               <div className="flex shrink-0 items-center gap-2">
-                <button className="rounded-lg bg-brand-500 px-3 py-1.5 text-xs font-semibold text-surface hover:bg-brand-400">
+                <button className="rounded-lg bg-green-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-green-800">
                   Include in Training
                 </button>
-                <button className="rounded-lg border border-surface-border px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/5">
+                <button className="rounded-lg border border-surface-border px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/5">
                   Exclude
                 </button>
               </div>

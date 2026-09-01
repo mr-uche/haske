@@ -90,7 +90,7 @@ export default function MobileHome() {
           icon={ClipboardList}
           label="New Encounter"
           color="text-green-950"
-          bg="bg-brand-500/10 border-brand-500/20"
+          bg="bg-brand-500 border-brand-500/20"
           onClick={() => router.push("/mobile/encounters")}
         />
 
@@ -98,7 +98,7 @@ export default function MobileHome() {
           icon={Brain}
           label="Start Gwarmai"
           color="text-blue-400"
-          bg="bg-blue-500/10 border-blue-500/20"
+          bg="bg-blue-500 border-blue-500/20"
           onClick={() => router.push("/mobile/gwarmai")}
         />
 
@@ -106,7 +106,7 @@ export default function MobileHome() {
           icon={Activity}
           label="Report Disease"
           color="text-orange-400"
-          bg="bg-orange-500/10 border-orange-500/20"
+          bg="bg-orange-500 border-orange-500/20"
           onClick={() => router.push("/mobile/report")}
         />
 
@@ -114,7 +114,7 @@ export default function MobileHome() {
           icon={Map}
           label="LGA Heat Map"
           color="text-purple-400"
-          bg="bg-purple-500/10 border-purple-500/20"
+          bg="bg-purple-500 border-purple-500/20"
           onClick={() => router.push("/mobile/heatmap")}
         />
       </div>

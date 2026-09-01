@@ -14,9 +14,9 @@ export default function PHCReportsTab() {
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-sm font-semibold text-white">{r.title}</h3>
-              <p className="text-xs text-slate-500">{r.dateRange}</p>
+              <p className="text-xs text-white">{r.dateRange}</p>
             </div>
-            <button className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-surface hover:bg-brand-400">
+            <button className="flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-900">
               <Download size={15} />
               Download
             </button>
@@ -27,17 +27,17 @@ export default function PHCReportsTab() {
               <p className="text-2xl font-bold text-white">
                 {r.totalVisits.toLocaleString()}
               </p>
-              <p className="mt-1 text-xs text-slate-400">Total Visits</p>
+              <p className="mt-1 text-xs text-white">Total Visits</p>
             </div>
             <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4">
               <p className="text-2xl font-bold text-white">
                 {r.patientEncounters.toLocaleString()}
               </p>
-              <p className="mt-1 text-xs text-slate-400">Patient Encounters</p>
+              <p className="mt-1 text-xs text-white">Patient Encounters</p>
             </div>
             <div className="rounded-xl border border-surface-border bg-white/[0.02] p-4">
               <p className="text-2xl font-bold text-white">{r.diseaseReports}</p>
-              <p className="mt-1 text-xs text-slate-400">Disease Reports</p>
+              <p className="mt-1 text-xs text-white">Disease Reports</p>
             </div>
           </div>
         </div>

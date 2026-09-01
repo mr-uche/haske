@@ -29,13 +29,13 @@ export default function AlertThresholdsTab() {
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-sm font-semibold text-white">Outbreak Alert Thresholds</h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-white">
             Set the case count that triggers an alert per disease
           </p>
         </div>
         <button
           onClick={handleSave}
-          className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-surface hover:bg-brand-400"
+          className="flex items-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-400"
         >
           <Save size={15} />
           {saved ? "Saved" : "Save Thresholds"}
@@ -51,19 +51,19 @@ export default function AlertThresholdsTab() {
                 {t.name}
               </span>
               <div className="flex items-center gap-3">
-                <span className="font-mono text-sm font-semibold text-brand-400">
+                <span className="font-mono text-sm font-semibold text-white">
                   {t.value} cases
                 </span>
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => updateValue(t.name, t.value - 1)}
-                    className="flex h-6 w-6 items-center justify-center rounded-md bg-white/10 text-slate-300 hover:bg-white/20"
+                    className="flex h-6 w-6 items-center justify-center rounded-md bg-white/10 text-white hover:bg-white/20"
                   >
                     <Minus size={13} />
                   </button>
                   <button
                     onClick={() => updateValue(t.name, t.value + 1)}
-                    className="flex h-6 w-6 items-center justify-center rounded-md bg-white/10 text-slate-300 hover:bg-white/20"
+                    className="flex h-6 w-6 items-center justify-center rounded-md bg-white/10 text-white hover:bg-white/20"
                   >
                     <Plus size={13} />
                   </button>
@@ -86,7 +86,7 @@ export default function AlertThresholdsTab() {
                 }%)`,
               }}
             />
-            <div className="mt-1 flex justify-between text-xs text-slate-500">
+            <div className="mt-1 flex justify-between text-xs text-white">
               <span>{t.min}</span>
               <span>{t.max}</span>
             </div>

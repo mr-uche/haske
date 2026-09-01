@@ -34,19 +34,19 @@ export default function ClaimsQueueTab() {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-900 p-5">
+        <div className="rounded-2xl border border-brand-500/20 bg-green-950 p-5">
           <p className="text-3xl font-bold text-white">{total}</p>
           <p className="mt-2 text-sm font-semibold text-white">Total Claims</p>
         </div>
-        <div className="rounded-2xl border border-amber-500/20 bg-amber-700 p-5">
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-400 p-5">
           <p className="text-3xl font-bold text-white">{pending}</p>
           <p className="mt-2 text-sm font-semibold text-white">Pending</p>
         </div>
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-600 p-5">
+        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-600 p-5">
           <p className="text-3xl font-bold text-white">{approved}</p>
           <p className="mt-2 text-sm font-semibold text-white">Approved</p>
         </div>
-        <div className="rounded-2xl border border-orange-500/20 bg-red-700 p-5">
+        <div className="rounded-2xl border border-red-500/20 bg-red-900 p-5">
           <p className="text-3xl font-bold text-white">{flagged}</p>
           <p className="mt-2 text-sm font-semibold text-white">Flagged</p>
         </div>
@@ -54,11 +54,11 @@ export default function ClaimsQueueTab() {
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-2.5">
-          <Search size={16} className="text-slate-500" />
+          <Search size={16} className="text-white" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
             placeholder="Search claims..."
           />
         </div>
@@ -82,7 +82,7 @@ export default function ClaimsQueueTab() {
       <div className="rounded-2xl border border-surface-border bg-green-950">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-5 py-3 font-medium">Patient</th>
               <th className="px-5 py-3 font-medium">ASCHMA ID</th>
               <th className="px-5 py-3 font-medium">Diagnosis</th>
@@ -101,7 +101,7 @@ export default function ClaimsQueueTab() {
               >
                 <td className="px-5 py-4">
                   <p className="font-semibold text-white">{c.patientName}</p>
-                  <p className="text-xs text-slate-500">{c.chew}</p>
+                  <p className="text-xs text-white">{c.chew}</p>
                 </td>
                 <td className="px-5 py-4 font-mono text-xs text-brand-400">{c.aschmaId}</td>
                 <td className="px-5 py-4 text-slate-200">{c.diagnosis}</td>
@@ -114,9 +114,9 @@ export default function ClaimsQueueTab() {
                     {c.status}
                   </span>
                 </td>
-                <td className="px-5 py-4 text-xs text-slate-500">{c.submitted}</td>
+                <td className="px-5 py-4 text-xs text-white">{c.submitted}</td>
                 <td className="px-5 py-4">
-                  <ChevronRight size={16} className="text-slate-600" />
+                  <ChevronRight size={16} className="text-white" />
                 </td>
               </tr>
             ))}

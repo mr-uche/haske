@@ -29,26 +29,26 @@ export default function NewEncounterSearch() {
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.back()}
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 text-slate-300 hover:bg-white/10"
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-950 text-white hover:bg-green-800"
         >
           <ChevronLeft size={18} />
         </button>
-        <h1 className="text-lg font-bold text-white">New Encounter</h1>
+        <h1 className="text-lg font-bold text-black">New Encounter</h1>
       </div>
 
-      <p className="mt-4 text-sm text-brand-400">
+      <p className="mt-4 text-sm text-black">
         Search for the patient to start an encounter.
       </p>
 
-      <div className="mt-3 flex items-center gap-2 rounded-xl border border-surface-border bg-white/[0.03] px-4 py-3">
-        <Search size={16} className="text-slate-500" />
+      <div className="mt-3 flex items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-3">
+        <Search size={16} className="text-white" />
         <input
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
             setSelectedId(null);
           }}
-          className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+          className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
           placeholder="Search by name or ASCHMA ID..."
         />
       </div>
@@ -61,16 +61,16 @@ export default function NewEncounterSearch() {
               onClick={() => setSelectedId(p.id)}
               className={`flex w-full items-center justify-between rounded-xl border p-3.5 text-left transition ${
                 selectedId === p.id
-                  ? "border-brand-500/40 bg-brand-500/10"
+                  ? "border-black bg-green-950"
                   : "border-surface-border bg-white/[0.02]"
               }`}
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-semibold text-slate-200">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-green-950 text-xs font-semibold text-black">
                   {p.initials}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-white">{p.name}</p>
+                  <p className="text-sm font-semibold text-black">{p.name}</p>
                   <p className="text-xs text-slate-500">{p.aschmaId}</p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function NewEncounterSearch() {
       <button
         onClick={handleContinue}
         disabled={!selectedId}
-        className="mt-4 w-full rounded-xl bg-brand-500 py-3.5 text-sm font-bold text-surface hover:bg-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-4 w-full rounded-xl bg-green-950 py-3.5 text-sm font-bold text-white hover:bg-green-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         Continue to Vitals
       </button>

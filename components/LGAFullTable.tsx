@@ -40,14 +40,14 @@ export default function LGAFullTable({
   return (
     <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
       <h3 className="text-sm font-semibold text-white">All 21 LGAs — Full Comparison</h3>
-      <p className="text-xs text-slate-500">
+      <p className="text-xs text-white">
         Click column headers to sort · Click rows to add to radar
       </p>
 
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs text-white">
               <th className="py-2 pr-4 font-medium">LGA</th>
               <th className="py-2 pr-4 font-medium">Risk Level</th>
               {columns.map((c) => (

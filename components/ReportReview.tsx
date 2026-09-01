@@ -105,7 +105,7 @@ function ReviewRow({
 }) {
   return (
     <div className="flex items-center justify-between px-4 py-3.5">
-      <span className={`flex items-center gap-2 text-sm ${highlight ? "text-brand-400" : "text-slate-400"}`}>
+      <span className={`flex items-center gap-2 text-sm ${highlight ? "text-slate-800" : "text-white"}`}>
         <Icon size={14} />
         {label}
       </span>

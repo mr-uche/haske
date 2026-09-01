@@ -41,20 +41,20 @@ export default function FacilityManager() {
       {/* Facility header */}
       <div className="flex items-center justify-between rounded-2xl border border-surface-border bg-green-950 p-5">
         <div className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/15 text-brand-400">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-600 text-white">
             <Building2 size={20} />
           </span>
           <div>
             <h2 className="text-base font-bold text-white">Yola South PHC</h2>
-            <p className="text-xs text-slate-500">Yola South LGA · Adamawa State</p>
+            <p className="text-xs text-white">Yola South LGA · Adamawa State</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right">
-            <p className="text-xs text-slate-500">Last sync</p>
-            <p className="text-sm font-semibold text-slate-300">141d ago</p>
+            <p className="text-xs text-white">Last sync</p>
+            <p className="text-sm font-semibold text-white">141d ago</p>
           </div>
-          <span className="flex items-center gap-1.5 rounded-full bg-brand-500/15 px-3 py-1.5 text-xs font-semibold text-brand-400">
+          <span className="flex items-center gap-1.5 rounded-full bg-green-600 px-3 py-1.5 text-xs font-semibold text-white">
             <CheckCircle2 size={13} /> Hub Online
           </span>
         </div>
@@ -143,14 +143,14 @@ function OverviewTab() {
               </defs>
               <XAxis
                 dataKey="day"
-                stroke="#64748b"
-                tick={{ fontSize: 11, fill: "#64748b" }}
+                stroke="#ffffff"
+                tick={{ fontSize: 11, fill: "#ffffff" }}
                 axisLine={false}
                 tickLine={false}
               />
               <YAxis
-                stroke="#64748b"
-                tick={{ fontSize: 11, fill: "#64748b" }}
+                stroke="#ffffff"
+                tick={{ fontSize: 11, fill: "#ffffff" }}
                 axisLine={false}
                 tickLine={false}
               />
@@ -194,9 +194,9 @@ function StatCard({
   accent: "brand" | "red" | "amber";
 }) {
   const accentStyles = {
-    brand: "border-brand-500/20 bg-brand-500/10 text-brand-400",
-    red: "border-red-500/20 bg-red-500/10 text-red-400",
-    amber: "border-amber-500/20 bg-amber-500/10 text-amber-400",
+    brand: "border-brand-500/50 bg-brand-500 text-brand-400",
+    red: "border-red-500/50 bg-red-500 text-red-400",
+    amber: "border-amber-500/50 bg-amber-500 text-amber-400",
   }[accent];
 
   return (
@@ -206,7 +206,7 @@ function StatCard({
         <span className={`text-xs font-semibold ${badgeColor}`}>{badge}</span>
       </div>
       <p className="mt-3 text-3xl font-bold text-white">{value}</p>
-      <p className="text-xs text-slate-400">{label}</p>
+      <p className="text-xs text-white">{label}</p>
     </div>
   );
 }

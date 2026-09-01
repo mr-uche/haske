@@ -61,11 +61,11 @@ export default function FindPatient() {
                 <m.icon size={22} />
               </span>
               <div>
-                <p className="text-sm font-semibold text-black">{m.title}</p>
-                <p className="mt-0.5 text-xs text-black">{m.description}</p>
+                <p className="text-sm font-semibold text-white">{m.title}</p>
+                <p className="mt-0.5 text-xs text-white">{m.description}</p>
               </div>
             </div>
-            <ChevronRight size={16} className="text-slate-600" />
+            <ChevronRight size={16} className="text-white" />
           </button>
         ))}
       </div>

@@ -50,45 +50,45 @@ export default function FollowUpQuestions() {
       <div className="flex items-center gap-3">
         <button
           onClick={() => router.back()}
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 text-slate-300 hover:bg-white/10"
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-950 text-white hover:bg-green-900"
         >
           <ChevronLeft size={18} />
         </button>
-        <h1 className="text-lg font-bold text-white">Follow-up Questions</h1>
+        <h1 className="text-lg font-bold text-black">Follow-up Questions</h1>
       </div>
 
       <div className="mt-4 flex items-center justify-between text-xs">
-        <span className="font-semibold text-brand-400">Questions answered</span>
-        <span className="text-slate-400">
+        <span className="font-semibold text-black">Questions answered</span>
+        <span className="text-black">
           {answeredCount}/{totalQuestions}
         </span>
       </div>
-      <div className="mt-1.5 h-1 w-full overflow-hidden rounded-full bg-white/10">
+      <div className="mt-1.5 h-1 w-full overflow-hidden rounded-full bg-green-950">
         <div
-          className="h-full rounded-full bg-brand-500 transition-all"
+          className="h-full rounded-full bg-green-950 transition-all"
           style={{ width: `${progressPercent}%` }}
         />
       </div>
 
-      <div className="mt-5 rounded-xl border border-surface-border bg-white/[0.02] p-4">
+      <div className="mt-5 rounded-xl border border-surface-border bg-green-950 p-4">
         <p className="text-sm font-semibold text-white">
           How many days has the patient had these symptoms?
         </p>
-        <div className="mt-3 flex items-center gap-2 rounded-xl border border-surface-border bg-white/[0.03] px-4 py-3">
+        <div className="mt-3 flex items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-3">
           <input
             type="number"
             min={0}
             value={days}
             onChange={(e) => setDays(e.target.value)}
             placeholder="e.g. 3"
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-white placeholder:text-white focus:outline-none"
           />
-          <span className="text-sm text-slate-500">days</span>
+          <span className="text-sm text-white">days</span>
         </div>
       </div>
 
       {yesNoQuestions.map((q) => (
-        <div key={q.key} className="mt-4 rounded-xl border border-surface-border bg-white/[0.02] p-4">
+        <div key={q.key} className="mt-4 rounded-xl border border-surface-border bg-green-950 p-4">
           <p className="text-sm font-semibold text-white">{q.label}</p>
           <div className="mt-3 grid grid-cols-3 gap-2">
             {(["yes", "no", "unknown"] as YesNoUnknown[]).map((opt) => (
@@ -97,8 +97,8 @@ export default function FollowUpQuestions() {
                 onClick={() => setAnswer(q.key, opt)}
                 className={`rounded-xl border py-2.5 text-sm font-semibold capitalize transition ${
                   answers[q.key] === opt
-                    ? "border-brand-500/50 bg-brand-500/15 text-brand-400"
-                    : "border-surface-border bg-white/[0.03] text-slate-300"
+                    ? "border-black bg-green-700 text-white"
+                    : "border-surface-border bg-white/[0.03] text-white"
                 }`}
               >
                 {opt}
@@ -108,7 +108,7 @@ export default function FollowUpQuestions() {
         </div>
       ))}
 
-      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-black">
         Quick Vitals
       </p>
       <div className="mt-2 grid grid-cols-2 gap-3">
@@ -120,7 +120,7 @@ export default function FollowUpQuestions() {
 
       <button
         onClick={handleRunDiagnosis}
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 py-3.5 text-sm font-bold text-surface hover:bg-brand-400"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-green-950 py-3.5 text-sm font-bold text-white hover:bg-green-800"
       >
         Run AI Diagnosis
         <ChevronRight size={16} />
@@ -146,18 +146,18 @@ function VitalInput({
 }) {
   return (
     <div>
-      <label className="flex items-center gap-1.5 text-xs text-slate-400">
+      <label className="flex items-center gap-1.5 text-xs text-black">
         <Icon size={13} />
         {label}
       </label>
-      <div className="mt-1.5 flex items-center gap-2 rounded-xl border border-surface-border bg-white/[0.03] px-3 py-2.5">
+      <div className="mt-1.5 flex items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-3 py-2.5">
         <input
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+          className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
         />
-        <span className="text-xs text-slate-500">{unit}</span>
+        <span className="text-xs text-white">{unit}</span>
       </div>
     </div>
   );

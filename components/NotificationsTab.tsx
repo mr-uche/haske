@@ -32,13 +32,13 @@ export default function NotificationsTab() {
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-sm font-semibold text-white">Notification Channels</h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-white">
             Choose how outbreak alerts are distributed
           </p>
         </div>
         <button
           onClick={handleSave}
-          className="flex items-center gap-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-surface hover:bg-brand-400"
+          className="flex items-center gap-2 rounded-xl bg-green-500 px-4 py-2 text-sm font-semibold text-white hover:bg-green-900"
         >
           <Save size={15} />
           {saved ? "Saved" : "Save Settings"}
@@ -54,19 +54,19 @@ export default function NotificationsTab() {
               className="flex items-center justify-between rounded-xl border border-surface-border bg-white/[0.02] p-4"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/15 text-brand-400">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-400 text-white">
                   <Icon size={18} />
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">{c.title}</p>
-                  <p className="text-xs text-slate-500">{c.description}</p>
+                  <p className="text-xs text-white">{c.description}</p>
                 </div>
               </div>
 
                 <button
                 onClick={() => toggle(c.key)}
                 className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-                    c.enabled ? "bg-brand-500" : "bg-white/10"
+                    c.enabled ? "bg-green-500" : "bg-white/10"
                 }`}
                 >
                 <span

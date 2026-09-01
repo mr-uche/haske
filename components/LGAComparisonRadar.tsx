@@ -10,8 +10,18 @@ import {
 } from "recharts";
 import { lgaData } from "../lib/lgaData";
 
-const radarColors = ["#2dd4bf", "#10b981", "#f97316", "#a855f7", "#3b82f6"];
-const metrics: { key: "activeCases" | "population" | "density" | "phcs"; label: string }[] = [
+const radarColors = [
+  "#ef4444", // red
+  "#eab308", // yellow
+  "#3b82f6", // blue
+  "#ec4899", // pink/magenta
+  "#22c55e", // green
+];
+
+const metrics: {
+  key: "activeCases" | "population" | "density" | "phcs";
+  label: string;
+}[] = [
   { key: "activeCases", label: "Cases" },
   { key: "density", label: "Density" },
   { key: "phcs", label: "PHCs" },
@@ -29,7 +39,7 @@ export default function LGAComparisonRadar({
     .map((name) => lgaData.find((l) => l.name === name))
     .filter(Boolean) as typeof lgaData;
 
-  // Normalize each metric 0-100 across all LGAs so the radar shape is meaningful
+  // Normalize each metric 0-100 across all LGAs
   const maxes = {
     activeCases: Math.max(...lgaData.map((l) => l.activeCases)),
     population: Math.max(...lgaData.map((l) => l.population)),
@@ -39,9 +49,11 @@ export default function LGAComparisonRadar({
 
   const radarData = metrics.map(({ key, label }) => {
     const row: Record<string, number | string> = { metric: label };
+
     lgas.forEach((l) => {
       row[l.name] = Math.round((l[key] / maxes[key]) * 100);
     });
+
     return row;
   });
 
@@ -49,9 +61,14 @@ export default function LGAComparisonRadar({
     <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
       <div className="flex items-start justify-between">
         <div>
-          <h3 className="text-sm font-semibold text-white">LGA Comparison Radar</h3>
-          <p className="text-xs text-slate-500">Select up to 5 LGAs from the table</p>
+          <h3 className="text-sm font-semibold text-white">
+            LGA Comparison Radar
+          </h3>
+          <p className="text-xs text-white">
+            Select up to 5 LGAs from the table
+          </p>
         </div>
+
         <div className="flex flex-wrap justify-end gap-2">
           {lgas.map((l, i) => (
             <button
@@ -74,10 +91,15 @@ export default function LGAComparisonRadar({
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart data={radarData}>
             <PolarGrid stroke="rgba(255,255,255,0.08)" />
+
             <PolarAngleAxis
               dataKey="metric"
-              tick={{ fontSize: 11, fill: "#94a3b8" }}
+              tick={{
+                fill: "#ffffff",
+                fontSize: 11,
+              }}
             />
+
             {lgas.map((l, i) => (
               <Radar
                 key={l.name}

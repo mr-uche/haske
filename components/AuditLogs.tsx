@@ -53,13 +53,13 @@ export default function AuditLogs() {
     <>
       {/* zha Statisticul cards */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-brand-500/20 bg-brand-900 p-5">
+        <div className="rounded-2xl border border-brand-500/20 bg-brand-700 p-5">
           <div className="flex items-center justify-between">
             <Shield size={20} className="text-brand-400" />
             <span className="text-3xl font-bold text-white">{total}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">Total Events</p>
-          <p className="text-xs text-slate-400">Last 30 days</p>
+          <p className="text-xs text-white">Last 30 days</p>
         </div>
 
         <div className="rounded-2xl border border-red-500/20 bg-red-700 p-5">
@@ -68,7 +68,7 @@ export default function AuditLogs() {
             <span className="text-3xl font-bold text-white">{failed}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">Failed Attempts</p>
-          <p className="text-xs text-slate-400">Last 30 days</p>
+          <p className="text-xs text-white">Last 30 days</p>
         </div>
 
         <div className="rounded-2xl border border-amber-500/20 bg-amber-500 p-5">
@@ -77,18 +77,18 @@ export default function AuditLogs() {
             <span className="text-3xl font-bold text-white">{warnings}</span>
           </div>
           <p className="mt-3 text-sm font-semibold text-white">Warnings</p>
-          <p className="text-xs text-slate-400">Last 30 days</p>
+          <p className="text-xs text-white">Last 30 days</p>
         </div>
       </div>
 
       {/* Searshhh + filtearrrs + expuorts */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-2 rounded-xl border border-surface-border bg-green-950 px-4 py-2.5">
-          <Search size={16} className="text-slate-900" />
+          <Search size={16} className="text-white" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
             placeholder="Search logs..."
           />
         </div>
@@ -97,7 +97,7 @@ export default function AuditLogs() {
           <select
             value={actionFilter}
             onChange={(e) => setActionFilter(e.target.value as ActionType | "all")}
-            className="bg-transparent text-sm text-slate-300 focus:outline-none"
+            className="bg-transparent text-sm text-white focus:outline-none"
           >
             <option value="all" className="bg-green-950">All Actions</option>
             {actions.map((a) => (
@@ -112,7 +112,7 @@ export default function AuditLogs() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as LogStatus | "all")}
-            className="bg-transparent text-sm text-slate-300 focus:outline-none"
+            className="bg-transparent text-sm text-white focus:outline-none"
           >
             <option value="all" className="bg-surface-card">All Status</option>
             <option value="success" className="bg-surface-card">Success</option>
@@ -131,7 +131,7 @@ export default function AuditLogs() {
       <div className="overflow-x-auto rounded-2xl border border-surface-border bg-green-950">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-5 py-3 font-medium">Action</th>
               <th className="px-5 py-3 font-medium">User</th>
               <th className="px-5 py-3 font-medium">Resource</th>
@@ -156,12 +156,12 @@ export default function AuditLogs() {
                   </td>
                   <td className="px-5 py-4">
                     <p className="font-semibold text-white">{log.userName}</p>
-                    <p className="text-xs text-slate-500">{log.userId}</p>
+                    <p className="text-xs text-white">{log.userId}</p>
                   </td>
                   <td className="px-5 py-4 font-mono text-xs text-slate-300">
                     {log.resource}
                   </td>
-                  <td className="max-w-xs px-5 py-4 text-slate-400">
+                  <td className="max-w-xs px-5 py-4 text-white">
                     {log.detail}
                   </td>
                   <td className="px-5 py-4">
@@ -170,10 +170,10 @@ export default function AuditLogs() {
                       {log.status}
                     </span>
                   </td>
-                  <td className="px-5 py-4 font-mono text-xs text-slate-500">
+                  <td className="px-5 py-4 font-mono text-xs text-white">
                     {log.ip}
                   </td>
-                  <td className="px-5 py-4 text-xs text-slate-500">{log.time}</td>
+                  <td className="px-5 py-4 text-xs text-white">{log.time}</td>
                 </tr>
               );
             })}

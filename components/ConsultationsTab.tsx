@@ -26,11 +26,11 @@ export default function ConsultationsTab() {
     <div className="rounded-2xl border border-surface-border bg-green-950 p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-2 rounded-xl border border-surface-border bg-white/[0.02] px-4 py-2.5">
-          <Search size={16} className="text-slate-500" />
+          <Search size={16} className="text-white" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm text-slate-200 placeholder:text-white focus:outline-none"
             placeholder="Search consultations..."
           />
         </div>
@@ -47,7 +47,7 @@ export default function ConsultationsTab() {
               onClick={() => setFilter(f.key)}
               className={`rounded-lg px-3.5 py-2 text-xs font-semibold transition ${
                 filter === f.key
-                  ? "bg-brand-500/15 text-brand-400"
+                  ? "bg-green-700 text-white"
                   : "bg-white/5 text-slate-400 hover:bg-white/10"
               }`}
             >
@@ -60,7 +60,7 @@ export default function ConsultationsTab() {
       <div className="mt-5 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-surface-border text-left text-xs uppercase tracking-wide text-white">
               <th className="px-3 py-3 font-medium">Patient</th>
               <th className="px-3 py-3 font-medium">CHEW</th>
               <th className="px-3 py-3 font-medium">AI Diagnosis</th>
@@ -77,12 +77,12 @@ export default function ConsultationsTab() {
               <tr key={i} className="border-b border-surface-border/50 last:border-0">
                 <td className="px-3 py-4">
                   <p className="font-semibold text-white">{c.patientName}</p>
-                  <p className="text-xs text-slate-500">{c.location}</p>
+                  <p className="text-xs text-white">{c.location}</p>
                 </td>
-                <td className="px-3 py-4 text-slate-300">{c.chew}</td>
+                <td className="px-3 py-4 text-white">{c.chew}</td>
                 <td className="px-3 py-4">
                   <p className="text-slate-200">{c.diagnosis}</p>
-                  <p className="text-xs text-slate-500">{c.icdCode}</p>
+                  <p className="text-xs text-white">{c.icdCode}</p>
                 </td>
                 <td className="px-3 py-4">
                   <span
